@@ -1,0 +1,4 @@
+12:12 2016-04-22
+* Minibosses respawn. They give you special loot the first time you beat them.
+
+* Titanite shards, used for weapon upgrades, drop rarely from all enemies.

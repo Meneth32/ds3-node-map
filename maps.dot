@@ -1,0 +1,184 @@
+graph maps {
+
+root [label="Firelink Shrine"];
+root -- 1;
+
+subgraph clusterHighwall {
+	label = "High Wall of Lothric";
+	1 [label="Start, Bonfire (High Wall of Lothric)"];
+	a [label="Dead dragon, worshippers" shape=box];
+	b [label="Crossbow, worshippers" shape=box];
+	1 -- a;
+	1 -- b;
+	b -- 3 [dir=forward label="Locked from this side"];
+	b -- 2;
+	2 [label="Miniboss (Worm monster)"];
+	a -- 4;
+	a -- 5;
+	4 -- 5;
+	4 [label="Enemies, grenadier, Binoculars"];
+	5 -- c [label="Ladder"];
+	c -- d;
+	c -- e;
+	d [label="Live dragon, Claymore" shape=box];
+	e [label="Enemies" shape=box];
+	e -- f;
+	f [label="Miniboss (Swordsman)" shape=box];
+	f -- 6 [dir=forward label="Locked from this side"];
+	d -- 6;
+	6 [label="Mimic"];
+	f -- 7;
+	7 -- g;
+	g [label="Bonfire (Tower on the Wall)"];
+	7 -- 8;
+	7 -- 9;
+	9 -- h [label="Locked door (key not yet found?)"];
+	9 -- 10;
+	10 [label="Mail Breaker"];
+	10 -- 11 [label="Locked (Cell Key)"];
+	11 [label="Greirat (prisoner/thief)"];
+	8 -- i;
+	i [label="Roofs, Miniboss (Worm monster), Gem carrier" shape=box];
+	i -- j [label="Ladder"];
+	j -- 13 [label="Ladder"];
+	j -- 12;
+	12 [label="Spearman"];
+	12 -- 14;
+	14 [label="Titanite shard"];
+	12 -- 15;
+	15 -- k [label="Hidden path"];
+	k -- l [dir=forward label="Jump" shape=box];
+	l [label="Chest, Astora Straight Sword"];
+	l -- m [dir=forward label="Jump"];
+	15 -- m [label="Stairs"];
+	m [label="Estus shard, Cell Key" shape=box];
+	m -- 13 [dir=forward label="Jump"];
+	13 [label="Miniboss (Big polearm dude), Ember"];
+	13 -- n;
+	n [label="Courtyard" shape=box];
+	n -- o;
+	o [label="Priestess" shape=box];
+	n -- p;
+	p [label="BOSS (Vordt of the Boreal Valley)" shape=box];
+	p -- q;
+	q [label="Exit" shape=box];
+	n -- 3;
+	3 [label="Elevator"];
+}
+
+q -- us1 [dir=forward];
+
+subgraph clusterUndeadSettlement {
+	label = "Undead Settlement";
+	us1 [label="Start, Bonfire (Foot of the High Wall)"];
+	us1 -- us2;
+	us2 [label="Road, Lever (opens portcullis)" shape=box];
+	us2 -- us3;
+	us2 -- us4;
+	us4 [label="Yoel of Londor" shape=box];
+	us3 [shape=box label="Bonfire (Undead Settlement)"];
+	us3 -- us5;
+	us5 [shape=box label="Three-story house"];
+	us5 -- us6;
+	us6  [label="Loretta's Bone, tree on fire with worshippers, fat pyromancer, Ember, Estus shard"];
+	us6 -- us8;
+	us6 -- us9 [label="Bridge"];
+	us9 -- us10;
+	us9 -- us11 [label="Sidepath"];
+	us11 [label="Fading Soul, ranged attackers on the roof"];
+	us10 [label="Door that opens from this side, no key needed"];
+	us10 -- us12;
+	us12 [label="Caduceus Round Shield"];
+	us12 -- us13
+	us13 [label="Grenadiers, Miniboss (Guy with cauldron & big wooden shield)"];
+	us13 -- us14;
+	us14 -- us15 [dir=forward label="Drop down"];
+	us15 [label="Titanite shard, Bonfire (Cliff Underside)"];
+	us15 -- us16;
+	us16 [label="Roofs, Cornyx the pyromancer, Hand Axe"];
+	us16 -- us14 [dir=forward label="Drop down"];
+	us16 -- us13 [dir=forward label="Drop down"];
+	us14 -- us17;
+	us17 [label="Road"];
+	us17 -- us18 [label="Bridge"];
+	us17 -- us20 [label="Ladder"];
+	us20 [label="Sewer with ROUSs, Caestus, Miniboss (Big ROUS, drops Bloodbite Ring)"];
+	us20 -- us33 [dir=forward label="Locked door (Grave Key, bought at Firelink Shrine.)"];
+	us20 -- us22 [dir=forward label="Ladder and a door that opens from this side"];
+	us22 [label="Bonfire (Dilapidated Bridge)"];
+	us22 -- us23 [label="Ladder"];
+	us23 [label="Titanite shard"];
+	us22 -- us24;
+	us24 [label="Small town square, Titanite shard"];
+	us24 -- us25;
+	us25 [shape=box label="Corridor with corpse-cage enemies"];
+	us25 -- us26 [dir=forward label="Locked from this side"];
+	us26 [label="Warrior of Sunlight, Estus Soup"];
+	us25 -- us26 [dir=forward label="Drop down from upper floor"];
+	us25 -- us6 [dir=forward label="Opens from this side"];
+	us22 -- us27;
+	us8 -- us25 [dir=forward label="Drop down"];
+	us27 [label="Bombardement path, Young White Branch x3, Undead Bone Shard"];
+	us27 -- us28;
+	us28 [label="Great Scythe"];
+	us27 -- us29;
+	us29 [label="Graveyard, Mortician's Ashes, Cleric clothes set"];
+	us28 -- us30;
+	us30 [label="Castle with flowers"];
+	us30 -- us17 [label="Big door, opens from this side"];
+	us30 -- us31;
+	us31 [label="BOSS (Rotted Greatwood), Bonfire (Pit of Hollows)"];
+	us18 -- us32 [dir=forward label="Get knocked down by thrown cauldron"];
+	us32 [label="Titanite shard"];
+	us32 -- us33 [label="Stairs"];
+	us32 -- us34 [label="Tunnel, shoot down hanging body with loot (Blessed Red and White Shield)"];
+	us33 [label="Crypt with skeletons, Red Hilted Halberd, Loincloth, statue of Velka"];
+	us34 [label="ROUSs, Saint's Talisman"];
+	us34 -- us36 [label="Ladder"];
+	us36 -- us37 [label="Door opens from this side"];
+	us36 [label="Irina of Carim"];
+	us37 [label="Eygon of Carim, friend to Irina"];
+	us18 -- us37;
+	us37 -- us38 [label="Big door"];
+	us38 [label="Elevator, Siegward of Catarina"];
+	us38 -- us39 [label="Elevator down"];
+	us39 [label="Miniboss (Big guy with ice sword, drops Irithyll Straight Sword, does not respawn)"];
+	us38 -- us40 [label="Elevator up"];
+	us40 [label="Peaceful giant"];
+	us38 -- us41 [label="Elevator up, jump off halfway"];
+	us41 [label="Siegward again"];
+	us41 -- us42 [dir=forward label="Drop down"];
+	us42 [label="Miniboss (Big beast, Siegward helps fight, does not respawn), Large Club, Pale Tongue, Northern clothes set"];
+	us42 -- us43 [label="Stairs"];
+	us43 [label="Chest, Human Pine Resin x4"];
+	us43 -- us44;
+	us44 [label="Flynn's Ring"];
+	us44 -- us45 [dir=forward label="Drop down"];
+	us45 [label="Tower, top floor"];
+	us45 -- us46 [dir=forward label="Drop down"];
+	us46 [label="Mirrah clothes set, Chloranthy Ring"];
+	us46 -- us17 [dir=forward label="Drop down"];
+
+	// [label=""];
+}
+
+us39 -- rs1 [dir=forward label="Big door"];
+
+subgraph clusterRoadOfSacrifices {
+	label = "Road of Sacrifices";
+	rs1 [label="Bonfire (Road of Sacrifices), Shriving Stones"];
+	rs1 -- rs2 [dir=forward label="Drop down"];
+	rs2 [label="Brigand Axe, Miniboss (hunter, drops Butcher Knife), Brigand clothes set, Brigand Twindaggers, Titanite shard"];
+	rs2 -- rs3;
+	rs3 [label="Bonfire (Halfway Fortress), Anri of Astora, Horace"];
+	rs3 -- rs4;
+	rs4 [label="Forest lake (big area), Titanite shard"];
+	rs4 -- rs5;
+	rs5 [shape=box label="Stone building"];
+	rs5 -- rs6 [dir=forward label="Locked from this side"];
+	rs5 -- rs7;
+	rs7 [shape=box label="Balcony, Sellsword clothes set, Miniboss (Swordsman)"];
+
+	// [label=""];
+}
+}
