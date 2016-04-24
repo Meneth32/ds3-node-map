@@ -168,16 +168,48 @@ subgraph clusterRoadOfSacrifices {
 	label = "Road of Sacrifices";
 	rs1 [label="Bonfire (Road of Sacrifices), Shriving Stones"];
 	rs1 -- rs2 [dir=forward label="Drop down"];
-	rs2 [label="Brigand Axe, Miniboss (hunter, drops Butcher Knife), Brigand clothes set, Brigand Twindaggers, Titanite shard"];
+	rs2 [label="Brigand Axe, Miniboss (hunter, drops Butcher Knife),\n\
+Brigand clothes set, Brigand Twindaggers, Titanite shard"];
 	rs2 -- rs3;
 	rs3 [label="Bonfire (Halfway Fortress), Anri of Astora, Horace"];
 	rs3 -- rs4;
-	rs4 [label="Forest lake (big area), Titanite shard"];
+	rs4 [label="Swamp (big area), Titanite shard,\n\
+Miniboss (Giant Enemy Crab, drops Great Swamp Ring),\n\
+Miniboss (ANOTHER Giant Enemy Crab), Conjurator clothing set, Great Swamp Pyromancy Tome,\n\
+Fallen Knight clothes set"];
 	rs4 -- rs5;
 	rs5 [shape=box label="Stone building"];
 	rs5 -- rs6 [dir=forward label="Locked from this side"];
 	rs5 -- rs7;
 	rs7 [shape=box label="Balcony, Sellsword clothes set, Miniboss (Swordsman)"];
+	rs3 -- rs8;
+	rs4 -- rs8;
+	rs8 [label="Hills by the side of the Swamp,\n\
+Titanite shard x2, \n\
+Grass Crest Shield, Twin Dragon Greatshield"];
+	rs8 -- rs9;
+	rs4 -- rs10;
+	rs9 [label="Bonfire (Crucifixion Woods)"];
+	rs10 [label="Small stone cellar, Sage Ring, Sorcerer clothes set"];
+	rs4 -- rs11;
+	rs11 [label="Message (Warriors slumber ahead)"];
+	rs4 -- rs12;
+	rs12 [label="Flat ground south of swamp"];
+	rs12 -- rs13;
+	rs9 -- rs14;
+	rs9 -- rs15;
+	rs16 -- rs12 [dir=forward label="Drop down"];
+	rs16 [label="Golden Falcon Shield"];
+	rs17 -- rs16 [dir=forward label="Drop down"];
+	rs11 -- rs18;
+	rs18 [shape=box label="Stair room"];
+	rs18 -- rs17;
+	rs18 -- rs19 [dir=forward label="Drop down"];
+	rs19 [label="Ring of Sacrifice"];
+	rs19 -- rs11 [dir=forward label="Drop down"];
+	rs13 [label="Miniboss Duo (Sword & Club, drops Exile Greatsword & Great Club)"];
+	rs13 -- rs20 [label="Ladder"];
+	rs20 [label="Bonfire (Farron Keep)"];
 
 	// [label=""];
 }

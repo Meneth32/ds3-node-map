@@ -1,2 +1,4 @@
-"c:\Program Files (x86)\Graphviz 2.28\bin\dot" -Tpng -omaps.png maps.dot
-start maps.png
+@REM set FORMAT=png
+set FORMAT=svg
+"c:\Program Files (x86)\Graphviz 2.28\bin\dot" -T%FORMAT% -omaps.%FORMAT% maps.dot
+start maps.%FORMAT%
