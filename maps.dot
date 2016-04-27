@@ -1,4 +1,9 @@
 graph maps {
+	bgcolor=black;
+	color=green1;
+	fontcolor=green1;
+	node [color=green1 fontcolor=green1];
+	edge [color=green1 fontcolor=green1];
 
 root [label="Firelink Shrine"];
 root -- 1;
@@ -170,12 +175,16 @@ subgraph clusterRoadOfSacrifices {
 	rs1 -- rs2 [dir=forward label="Drop down"];
 	rs2 [label="Brigand Axe, Miniboss (hunter, drops Butcher Knife),\n\
 Brigand clothes set, Brigand Twindaggers, Titanite shard"];
+	rs2 -- rs2b [dir=forward label="Drop down"];
+	rs2b [label="Morne's Ring, Braille Divine Tome of Carim"];
+	rs2b -- rs2 [dir=forward label="Drop down"];
 	rs2 -- rs3;
 	rs3 [label="Bonfire (Halfway Fortress), Anri of Astora, Horace"];
 	rs3 -- rs4;
 	rs4 [label="Swamp (big area), Titanite shard,\n\
 Miniboss (Giant Enemy Crab, drops Great Swamp Ring),\n\
-Miniboss (ANOTHER Giant Enemy Crab), Conjurator clothing set, Great Swamp Pyromancy Tome,\n\
+Miniboss (ANOTHER Giant Enemy Crab, drops nothing),\n\
+Conjurator clothing set, Great Swamp Pyromancy Tome,\n\
 Fallen Knight clothes set"];
 	rs4 -- rs5;
 	rs5 [shape=box label="Stone building"];
@@ -197,7 +206,11 @@ Grass Crest Shield, Twin Dragon Greatshield"];
 	rs12 [label="Flat ground south of swamp"];
 	rs12 -- rs13;
 	rs9 -- rs14;
-	rs9 -- rs15;
+	rs14 [label="Estus Shard"];
+	rs9 -- rs15 [label="Hole in wall"];
+	rs9 -- rs14 [dir=forward label="Drop down behind room of ice mages"];
+	rs15 [shape=box label="Room full of ice mages, Heretic's Staff"];
+	rs15 -- rs21;
 	rs16 -- rs12 [dir=forward label="Drop down"];
 	rs16 [label="Golden Falcon Shield"];
 	rs17 -- rs16 [dir=forward label="Drop down"];
@@ -208,8 +221,123 @@ Grass Crest Shield, Twin Dragon Greatshield"];
 	rs19 [label="Ring of Sacrifice"];
 	rs19 -- rs11 [dir=forward label="Drop down"];
 	rs13 [label="Miniboss Duo (Sword & Club, drops Exile Greatsword & Great Club)"];
-	rs13 -- rs20 [label="Ladder"];
-	rs20 [label="Bonfire (Farron Keep)"];
+	rs21 [shape=box label="Stone ruin walls"];
+	rs21 -- rs18;
+	rs21 -- rs22;
+	rs21 -- rs25;
+	rs22 [label="Corridor, Blue Bug Pellet"];
+	rs22 -- rs10 [dir=forward label="Drop down (hole in floor)"];
+	rs13 -- rs20;
+	rs20 [shape=box label="View of the High Wall, view of loot (Farron Coal)"];
+	rs20 -- rs23 [label="Ladder"];
+	rs23 [shape=box label="Bonfire (Farron Keep)"];
+	rs22 -- rs18 [dir=forward label="Drop down"];
+	rs22 -- rs24;
+	rs24 [label="Small forest canyon"];
+	rs24 -- rs26;
+	rs26 [label="BOSS (Crystal Sage)"];
+	rs25 -- rs22;
+	rs25 [label="Orbeck of Vinheim (won't teach me anything)"];
+	rs26 -- rs27;
+	rs27 [label="Small forest canyon/cliff"];
+	rs27 -- rs28 [dir=forward label="Drop down"];
+	rs28 [label="Gem bug (Twinkling Titanite)"];
+	rs28 -- rs27;
+	rs27 -- rs29;
+	rs28 -- rs29 [dir=forward label="Drop down"];
+	rs29 [label="Campfire, pyromancer, Herald clothes set"];
+	rs7 -- rs30;
+	rs7 -- rs31;
+	rs30 -- rs31 [dir=forward label="Drop down"];
+	rs31 -- rs32;
+	rs30 [shape=box label="Upper balcony"];
+	rs31 [shape=box label="Corridor"];
+	rs32 [shape=box label="Farron Coal"];
+	rs20 -- rs32 [dir=both label="Collapsed gate, view only"];
+	rs6 [shape=box label="Miniboss (Ice Beast, like the one from the first level)"];
+	rs23 -- rs33;
+	rs33 [label="Lower swamp (big area),\n\
+Water is poisoned; don't stand in it for long.\n\
+Follow the campfires to find the signal fires.\n\
+Ragged Mask, Titanite Shard x5, Estus Shard, Prism Stone x10,\n\
+Miniboss (Swordsman, drops Cracked Red Eye Orb), Sage's Coal,\n\
+Sunlight Talisman, Estus Soup, Wolf's Blood Swordgrass,\n\
+Nameless Knight clothes set, Miniboss (Godzilla-like creature armed with whole tree),\n\
+Iron Flesh, Greatsword (on a dead-end ramp)"];
+	rs33 -- rs34;
+	rs34 [label="Stone ruins with signal fire (extinguishable)"];
+	rs34 -- rs34b;
+	rs34b [label="Swamp island, guarded"];
+	rs34b -- rs35;
+	rs35 [label="Stone ruins with signal fire (extinguishable)"];
+	rs35 -- rs36 [label="Small guarded bridge"];
+	rs36 [label="Bonfire (Keep Ruins)"];
+	rs36 -- rs37;
+	rs37 [label="Swamp surrounding Keep Entrance"];
+	rs37 -- rs38 [label="Big door, opens only once all three signal fires are extinguished"];
+	rs38 [label="Keep proper, Shriving Stone"];
+	rs37 -- rs39;
+	rs39 [label="Swamp to the left (with loot) (and a Giant Enemy Crab)"];
+	rs37 -- rs40;
+	rs40 [label="Swamp to the right, Undead Bone Shard"];
+	rs40 -- rs41 [label="Ladder"];
+	rs41 [shape=box label="Bonfire (Old Wolf of Farron), Dreamchaser's Ashes"];
+	rs41 -- rs42 [label="Elevator"];
+	rs39 -- rs43;
+	rs43 [label="Mushroom corner, Sage Scroll"];
+	rs43 -- rs44;
+	rs44 [label="Miniboss (3x Giant Swamp Monster) guarding a Poison Gem"];
+	rs42 [shape=box label="Platform"];
+	rs42 -- rs45;
+	rs45 [shape=box label="Road, Miniboss (Stray Demon), Greataxe"];
+	rs45 -- rs46 [dir=forward label="Drop down"];
+	rs46 [shape=box label="Broken road, Dragon Crest Shield, Lightning Spear, a dead dragon"];
+	rs46 -- rs47 [label="Stair"];
+	rs47 [label="Top of road-gate"];
+	rs47 -- rs45 [dir=forward label="Drop down"];
+	rs40 -- rs48;
+	rs48 [label="Miniboss (Swamp monster, wields tree, summons kamikaze souls), Titanite Shard x2"];
+	rs48 -- rs49;
+	rs49 [label="Signal fire tower"];
+	rs38 -- rs50;
+	rs50 [label="Big fight (Swordsmen vs Werewolves, swordsmen drop Cracked Red Eye Orbs)"];
+	rs50 -- rs51 [label="Big door"];
+	rs51 [label="BOSS (Abyss Watchers)"];
+	rs50 -- rs52;
+	rs52 [shape=box label="Bonfire (Farron Keep Perimeter)"];
+	rs52 -- rs53;
+	rs53 [shape=box label="Enemy with Ghru Rotshield"];
+	rs53 -- rs6;
+	rs6 [shape=box label="Balcony, Miniboss (Ice beast, drops Titanite Scale x2), Great Magic Weapon"];
+
+	// [label=""];
+}
+
+rs29 -- cd1 [label="Stone bridge"];
+
+subgraph clusterCathedralOfTheDeep {
+	label = "Cathedral of the Deep";
+
+	cd1 [label="Bonfire (Cathedral of the Deep)"];
+	cd1 -- cd2;
+	cd2 [label="Stairs, Miniboss (Guy with axe and shield, and friend, drops Spider Shield, does not respawn)"];
+	cd2 -- cd3 [dir=forward label="Drop down"];
+	cd2 -- cd4;
+	cd3 [label="Cliff road upwards, Crest Shield"];
+	cd3 -- cd2 [dir=forward label="Drop down"];
+	cd4 [label="Forest guarded by dogs and crossbows"];
+	cd4 -- cd5;
+	cd5 [label="Suicide bomber, worshippers, Estus Shard"];
+	cd5 -- cd6;
+	cd5 -- cd7;
+	cd7 [label="Graveyard labyrinth, Astora Greatsword"];
+	cd7 -- cd8 [label="Bridge"];
+	cd8 [label="Battlements"];
+	cd8 -- cd9;
+	cd9 [label="Great balcony"];
+	cd9 -- cd10 [label="Big door"];
+	cd9 -- cd11;
+	cd11 [label="Roofs"];
 
 	// [label=""];
 }

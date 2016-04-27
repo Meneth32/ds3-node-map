@@ -2,3 +2,10 @@
 * Minibosses respawn. They give you special loot the first time you beat them.
 
 * Titanite shards, used for weapon upgrades, drop rarely from all enemies.
+
+14:49 2016-04-25
+Got invaded by a dark spirit in the Road of Sacrifices, despite playing offline. It dropped:
+Heysel Pick
+Xanthous Crown
+
+It was after killing the Crystal Sage. I traveled from the Firelink Shrine to Farron Keep, then climbed up the ladder.
