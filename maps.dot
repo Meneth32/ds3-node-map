@@ -25,7 +25,7 @@ subgraph clusterHighwall {
 	5 -- c [label="Ladder"];
 	c -- d;
 	c -- e;
-	d [label="Live dragon, Claymore" shape=box];
+	d [label="Live dragon (can be chased off with a bow and 99 arrows, drops Large Titanite Shard), Claymore" shape=box];
 	e [label="Enemies" shape=box];
 	e -- f;
 	f [label="Miniboss (Swordsman)" shape=box];
@@ -153,7 +153,7 @@ subgraph clusterUndeadSettlement {
 	us38 -- us41 [label="Elevator up, jump off halfway"];
 	us41 [label="Siegward again"];
 	us41 -- us42 [dir=forward label="Drop down"];
-	us42 [label="Miniboss (Big beast, Siegward helps fight, does not respawn), Large Club, Pale Tongue, Northern clothes set"];
+	us42 [label="Miniboss (Fire Demon, Siegward helps fight, does not respawn), Large Club, Pale Tongue, Northern clothes set"];
 	us42 -- us43 [label="Stairs"];
 	us43 [label="Chest, Human Pine Resin x4"];
 	us43 -- us44;
@@ -291,7 +291,7 @@ Iron Flesh, Greatsword (on a dead-end ramp)"];
 	rs42 -- rs45;
 	rs45 [shape=box label="Road, Miniboss (Stray Demon), Greataxe"];
 	rs45 -- rs46 [dir=forward label="Drop down"];
-	rs46 [shape=box label="Broken road, Dragon Crest Shield, Lightning Spear, a dead dragon"];
+	rs46 [shape=box label="Broken road, Dragon Crest Shield, Lightning Spear, a dead dragon, 2 crystal bugs (drop Large Titanite Shards)"];
 	rs46 -- rs47 [label="Stair"];
 	rs47 [label="Top of road-gate"];
 	rs47 -- rs45 [dir=forward label="Drop down"];
@@ -302,7 +302,7 @@ Iron Flesh, Greatsword (on a dead-end ramp)"];
 	rs38 -- rs50;
 	rs50 [label="Big fight (Swordsmen vs Werewolves, swordsmen drop Cracked Red Eye Orbs)"];
 	rs50 -- rs51 [label="Big door"];
-	rs51 [label="BOSS (Abyss Watchers)"];
+	rs51 [shape=box label="BOSS (Abyss Watchers)"];
 	rs50 -- rs52;
 	rs52 [shape=box label="Bonfire (Farron Keep Perimeter)"];
 	rs52 -- rs53;
@@ -312,6 +312,8 @@ Iron Flesh, Greatsword (on a dead-end ramp)"];
 
 	// [label=""];
 }
+
+rs51 -- cc1;
 
 rs29 -- cd1 [label="Stone bridge"];
 
@@ -327,7 +329,7 @@ subgraph clusterCathedralOfTheDeep {
 	cd3 -- cd2 [dir=forward label="Drop down"];
 	cd4 [label="Forest guarded by dogs and crossbows"];
 	cd4 -- cd5;
-	cd5 [label="Suicide bomber, worshippers, Estus Shard"];
+	cd5 [label="Suicide bomber, worshippers, Estus Shard, Siegward (in the well next to the single worshipper)"];
 	cd5 -- cd6 [dir=forward label="Big door"];
 	cd5 -- cd7;
 	cd7 [label="Graveyard labyrinth, Astora Greatsword, Executioner's Greatsword"];
@@ -379,7 +381,11 @@ subgraph clusterCathedralOfTheDeep {
 	cd29 -- cd30;
 	cd30 [shape=box label="Miniboss (Huge spider, curses you, drops Aldrich's Sapphire)"];
 	cd29 -- cd31;
-	cd31 [shape=box label="Giant room with 2 giants"];
+	cd31 [shape=box label="Giant room with 2 giants and 2 levers.\n\
+One giant can be killed from [the balcony with Lloyd's Sword Ring], drops Large Titanite Shard & 4 Dung Pie.\n\
+He guards: Maiden clothes set, Soul of a Nameless Soldier, and a Big Door.\n\
+The other giant can be killed in the sludge. His attacks are easily avoided.\n\
+He guards: Drang Shoes, Drang Gauntlets, Drang Armor, Pale Tongue, Drang Hammers"];
 	cd31 -- cd32;
 	cd32 [label="Corridors, stairs"];
 	cd32 -- cd13 [dir=forward label="Door opens from this side"];
@@ -391,7 +397,7 @@ subgraph clusterCathedralOfTheDeep {
 	cd36 [shape=box label="Small tower"];
 	cd36 -- cd9 [dir=forward label="Drop down"];
 	cd36 -- cd37 [label="Ladder"];
-	cd37 [label="Guy drops Deep Ring"];
+	cd37 [label="Priest (drops Deep Ring)"];
 	cd37 -- cd38 [dir=forward label="Drop down"];
 	cd38 [label="Upper roofs, Arbalest, Pale Tongue"];
 	cd38 -- cd11 [dir=forward label="Drop down, hurts"];
@@ -403,10 +409,146 @@ subgraph clusterCathedralOfTheDeep {
 	cd40  [shape=box label="Balcony with swordsman and priests"];
 	cd40 -- cd41 [label="Fog door"];
 	cd40 -- cd10 [label="Elevator"];
-	cd10 [shape=box label="Upper balcony over giant room"];
+	cd10 [shape=box label="Upper balcony over giant room, Unbreakable Patches (if the stars are right)"];
 	cd10 -- cd31 [dir=forward label="Drop down (hurts)"];
-	cd41 [label="BOSS (Deacons of the Deep)"];
+	cd41 [label="BOSS (Deacons of the Deep), Archdeacon clothes set"];
+	cd39 -- cd42 [dir=forward label="Drop down (hurts)"];
+	cd42 [shape=box label="Balcony over giant room with 3rd lever"];
+	cd42 -- cd43;
+	cd43 [shape=box label="Balcony with slug enemies (the neutral one drops Red Sign Soapstone)"];
+	cd43 -- cd44 [label="Big door"];
+	cd44 [shape=box label="Bonfire (Rosaria's Bed Chamber), Rosaria (Mother of Rebirth)"];
+	cd42 -- cd10 [dir=forward label="Bridge raised by lever"];
+	cd31 -- cd45 [label="Big door"];
+	cd45 [shape=box label="Balcony with a view, Saint Bident"];
 
 	// [label=""];
 }
+
+subgraph clusterCatacombsOfCarthus {
+	label = "Catacombs of Carthus";
+
+	cc1 [shape=box label="Upper floor, view of abyss, Carthus Rouge"];
+	cc1 -- cc2 [label="Bridge"];
+	cc1 -- cc3 [dir=forward label="Drop down from bridge (hurts)"];
+	cc2 [shape=box label="Room with pillars"];
+	cc2 -- cc4;
+	cc2 -- cc5 [label="Stairs"];
+	cc4 [label="Corridor with trap"];
+	cc4 -- cc7 [label="Ladder"];
+	cc7 [label="Corridor, Sharp Gem"];
+	cc7 -- cc5;
+	cc5 -- cc8 [label="Stairs through abyss (trapped, loot)"];
+	cc5 -- cc9 [label="Corridor"];
+	cc5 [shape=box label="Titanite Shard x2"];
+	cc9 [label="Platform over abyss, Crystal Bug (Twinkling Titanite)"];
+	cc3 [label="Carthus Pyromancy Tome"];
+	cc3 -- cc7 [label="Illusory wall (attack to dispel)"];
+	cc8 [label="Kamikaze Ghost trap, Carthus Milkring"];
+	cc8 -- cc10;
+	cc8 -- cc14 [dir=forward label="Drop down"];
+	cc10 [label="Corridor, trapped and guarded"];
+	cc10 -- cc14 [dir=forward label="Drop down"];
+	cc10 -- cc13;
+	cc13 [label="Corridor, ball-trap, Large Titanite Shard, Bonfire (Catacombs of Carthus)"];
+	cc13 -- cc14;
+	cc14 [label="Sewers, Titanite Shard x4, Carthus Bloodring"];
+	cc14 -- cc15;
+	cc15 [label="Crystal Bug (drops Fire Gem), View of rope bridge"];
+	cc15 -- cc16;
+	cc16 [label="Lots of skeletons"];
+	cc16 -- cc17 [dir=forward label="Drop down, Stone bridge"];
+	cc16 -- cc17 [label="Rope bridge (fragile)"];
+	cc17 [label="Corridor"];
+	cc17 -- cc18 [label="Big door"];
+	cc18 [shape=box label="BOSS (High Lord Wolnir) (touch goblet to access separate boss arena)"];
+	cc14 -- cc20;
+	cc20 [label="Ember"];
+	cc14 -- cc21 [label="Stairs"];
+	cc21 [label="Other side of Kamikaze Ghost trap, Large Titanite Shard, Grave Warden's Ashes"];
+	cc21 -- cc14 [dir=forward label="Illusory wall (attack to dispel)"];
+	cc17 -- cc22 [label="Destroy rope bridge, it turns into a ladder."];
+	cc22 [shape=box label="Miniboss (Fire Demon), Large Titanite Shard,\n\
+Mimic (can be tricked into attacking the demon, but only the first time; does not respawn, drops Black Blade),\n\
+Skeletons (can also attack the demon)"];
+	cc22 -- cc23;
+	cc23 [label="Old Sage's Blindfold, Witch's Ring, Bonfire (Abandoned Tomb)"];
+	cc23 -- cc24;
+	cc24 [label="Smouldering Lake, Large Titanite Shard x4, Miniboss? (Great Worm), Shield of Want,\n\
+many Ember Giant Enemy Crabs (rarely drop Large Titanite Shard), Chaos Gem,\n\
+Speckled Stoneplate Ring (behind a brick wall; trick the ballista into destroying the wall)"];
+	cc24 -- cc25 [label="Fog door"];
+	cc25 [label="BOSS (Old Demon King)"];
+	cc24 -- cc26;
+	cc26 [label="Small cave, Crystal Bugs (Twinkling Titanite, Titanite Chunk), Large Titanite Shard x2"];
+	cc24 -- cc27 [dir=forward label="Drop down into hole"];
+	cc27 [label="Corridor, Crystal Bug (Chaos Gem)"];
+	cc27 -- cc28;
+	cc27 -- cc29;
+	cc28 [shape=box label="Bonfire (Old King's Antechamber)"];
+	cc28 -- cc30;
+	cc29 [shape=box label="Izalith Pyromancy Tome"];
+	cc30 [label="Corridors"];
+	cc30 -- cc31;
+	cc31 [shape=box label="Firebreathing statues"];
+	cc31 -- cc32;
+	cc31 -- cc33 [label="Illusory wall (attack to dispel)"];
+	cc33 [label="Black Knight (drops Black Knight Armor), Black Knight Sword"];
+	cc32 [label="Great Corridor, Undead Bone Shard"];
+	cc32 -- cc34;
+	cc34 [label="Corridor, part 1"];
+	cc34 -- cc35;
+	cc34 -- cc36;
+	cc35 [shape=box label="Grass and roots room"];
+	cc35 -- cc36;
+	cc36 [label="Corridor, part 2"];
+	cc36 -- cc38 [dir=forward label="Drop down into hole"];
+	cc34 -- cc38 [dir=forward label="Drop down into hole"];
+	cc38 [label="Small magma lake"];
+	cc36 -- cc39;
+	cc39 [shape=box label="Grass and roots corridor, Chest (Large Titanite Shard x3)"];
+	cc39 -- cc40;
+	cc40 [label="Curse-fog frogs, Titanite Scale"];
+	cc40 -- cc41;
+	cc39 -- cc40 [dir=forward label="Illusory wall behind chest, drop down, Izalith Staff"];
+	cc40 -- cc42 [label="Ambush by Knight Slayer Tsorig\n\
+(drops My Thanks!, Fume Ultra Greatsword, Black Iron Greatshield, Knight Slayer's Ring)"];
+	cc42 [shape=box label="Magma lake (unpassable), inaccessible loot"];
+	cc41 [shape=box label="Bridge over magma lake, Soul of a Crestfallen Knight"];
+	cc41 -- cc43;
+	cc43 [label="Long ladders, Dragonrider Bow"];
+	cc43 -- cc44;
+	cc44 [label="Platform above Smouldering Lake"];
+	cc44 -- cc45;
+	cc45 [label="Triple Ballista tower"];
+	cc35 -- cc46 [label="Illusory wall (attack to dispel)"];
+	cc46 [label="Quelana Pyromancy Tome"];
+	cc46 -- cc38;
+	cc46 -- cc39 [dir=forward label="Drop down"];
+	cc28 -- cc47 [label="Illusory wall"];
+	cc47 [label="Corridor, magma slimes on the roof, Estus Shard"];
+	cc47 -- cc32 [dir=forward label="Drop down"];
+	cc47 -- ccxx [dir=forward label="Drop down"];
+	cc47 -- cc48 [label="Jump over hole"];
+	cc48 [label="Balcony over Great Corridor"];
+	cc48 -- cc32;
+	cc48 -- cc32;
+	cc48 -- cc49;
+	cc49 [label="Bonfire (Demon Ruins)"];
+	cc49 -- cc24 [label="Large Titanite Shard"];
+	cc32 -- cc39 [dir=forward label="Drop down"];
+
+	// [label=""];
+}
+
+cc18 -- bv1 [label="Big door (locked until boss is defeated.)"];
+
+subgraph clusterBorealValley {
+	label = "Irithyll of the Boreal Valley";
+
+	bv1 [label="Bonfire (Irithyll of the Boreal Valley), Miniboss (Big lizard)"];
+
+	// [label=""];
+}
+
 }
