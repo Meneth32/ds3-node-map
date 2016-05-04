@@ -528,7 +528,7 @@ Speckled Stoneplate Ring (behind a brick wall; trick the ballista into destroyin
 	cc28 -- cc47 [label="Illusory wall"];
 	cc47 [label="Corridor, magma slimes on the roof, Estus Shard"];
 	cc47 -- cc32 [dir=forward label="Drop down"];
-	cc47 -- ccxx [dir=forward label="Drop down"];
+	cc47 -- cc30 [dir=forward label="Drop down"];
 	cc47 -- cc48 [label="Jump over hole"];
 	cc48 [label="Balcony over Great Corridor"];
 	cc48 -- cc32;
@@ -546,7 +546,100 @@ cc18 -- bv1 [label="Big door (locked until boss is defeated.)"];
 subgraph clusterBorealValley {
 	label = "Irithyll of the Boreal Valley";
 
-	bv1 [label="Bonfire (Irithyll of the Boreal Valley), Miniboss (Big lizard)"];
+	bv1 [label="Bonfire (Irithyll of the Boreal Valley),\n\
+Miniboss (Big lizard, drops Pontiff's Right Eye)"];
+	bv1 -- bv2;
+	bv2 [label="Bonfire (Central Irityll)"];
+	bv2 -- bv3;
+	bv3 [label="Road, Large Titanite Shard"];
+	bv3 -- bv4 [dir=forward label="Locked from this side"];
+	bv3 -- bv5;
+	bv5 [label="Round plaza, blue flowers"];
+	bv5 -- bv6;
+	bv6 [label="Road, Crystal Bug (Twinkling Titanite)"];
+	bv6 -- bv7;
+	bv7 [label="Outer Courtyard, Large Titanite Shard x3"];
+	bv7 -- bv8 [dir=forward label="Locked from this side"];
+	bv7 -- bv9;
+	bv7 -- bv10;
+	bv9 [label="Inner Courtyard, guarded by 2 flamers and 3 ice swords, Lightning Gem"];
+	bv10 [label="Balcony around houses"];
+	bv10 -- bv11;
+	bv11 [label="Bonfire (Church of Yorshka), Proof of a Concord Kept"];
+	bv11 -- bv12;
+	bv11 -- bv13;
+	bv10 -- bv14 [dir=forward label="Big door, locked from this side"];
+	bv10 -- bv9;
+	bv10 -- bv9;
+	bv9 -- bv15 [label="Illusory wall"];
+	bv17 -- bv9 [dir=forward label="Drop down"];
+	bv17 [label="Raised platform, Ring of the Sun's First Born"];
+	bv14 -- bv17 [dir=forward label="Drop down"];
+	bv14 [label="Balcony above courtyard"];
+	bv15 [label="Magic Clutch Ring"];
+	bv12 [label="Roster of Knights"];
+	bv12 -- bv16;
+	bv16 [label="Tree garden & graveyard, stealthed but weak enemies, Undead Bone Shard"];
+	bv16 -- bv19;
+	bv19 [label="Streets"];
+	bv19 -- bv20;
+	bv20 [label="Dark cellar with ghosts"];
+	bv20 -- bv21 [label="Ladder"];
+	bv21 [label="Rafters, Shriving Stone"];
+	bv20 -- bv22;
+	bv21 -- bv22 [dir=forward label="Outside, drop down"];
+	bv22 [label="Upper balcony"];
+	bv22 -- bv23;
+	bv23 [label="Lower balcony, Blood Gem"];
+	bv23 -- bv24;
+	bv24 [label="Lake, Ring of Sacrifice, Great Heal"];
+	bv24 -- bv25;
+	bv25 [label="Flooded cellar"];
+	bv24 -- bv26;
+	bv26 [label="Bonfire (Distant Manor)"];
+	bv25 -- bv27;
+	bv27 [label="Kitchen, sleeping Siegward, Estus Soup"];
+	bv27 -- bv28;
+	bv28 [label="Ballroom,\n\
+Knight (drops Large Titanite Shard & Divine Blessing), Archer on balcony"];
+	bv26 -- bv30;
+	bv30 [label="Large Titanite Shard"];
+	bv29 [label="Rusted Gold Coin"];
+	bv26 -- bv29 [dir=forward label="Drop down"];
+	bv29 -- bv30 [dir=forward label="Drop down"];
+	bv28 -- bv31;
+	bv31 [label="Balcony, 2 Knights (each drop Large Titanite Shard x2),\n\
+Chests (Leo Ring, Smough's Great Hammer, Divine Blessing)"];
+	bv28 -- bv32;
+	bv32 [label="Streets, Large Titanite Shard"];
+	bv32 -- bv33 [label="Elevator"];
+	bv32 -- bv34;
+	bv32 -- bv35 [dir=forward label="Drop down"];
+	bv35 [label="Large Titanite Shard"];
+	bv35 -- bv34 [label="Ladder"];
+	bv34 [shape=box label="Room"];
+	bv34 -- bv14;
+	bv14 -- bv37;
+	bv37 [shape=box label="BOSS (Pontiff Sulyvahn)"];
+	bv37 -- bv38;
+	bv38 [label="Round Balcony, Crystal Bugs (Twinkling Titanite, ???)"];
+	bv38 -- bv39;
+	bv38 -- bv40;
+	bv40 [label="Great Courtyard, lots of dead giants"];
+	bv40 -- bv41;
+	bv40 -- bv42;
+	bv37 -- bv43;
+	bv37 -- bv44;
+
+	// [label=""];
+}
+
+bv30 -- id1;
+
+subgraph clusterIrithyllDungeon {
+	label = "Irithyll Dungeon";
+
+	id1 [label="Bonfire (Irithyll Dungeon)"];
 
 	// [label=""];
 }
