@@ -1,3 +1,9 @@
+// Unexplored nodes:
+// h
+// bvxx
+// bv4
+
+
 graph maps {
 	bgcolor=black;
 	color=green1;
@@ -62,7 +68,7 @@ subgraph clusterHighwall {
 	13 -- n;
 	n [label="Courtyard" shape=box];
 	n -- o;
-	o [label="Priestess" shape=box];
+	o [label="Priestess, BOSS (Dancer of the Boreal Valley) (after beating all other bosses)" shape=box];
 	n -- p;
 	p [label="BOSS (Vordt of the Boreal Valley)" shape=box];
 	p -- q;
@@ -107,7 +113,8 @@ subgraph clusterUndeadSettlement {
 	us17 [label="Road"];
 	us17 -- us18 [label="Bridge"];
 	us17 -- us20 [label="Ladder"];
-	us20 [label="Sewer with ROUSs, Caestus, Miniboss (Big ROUS, drops Bloodbite Ring)"];
+	us20 [label="Sewer with ROUSs, Caestus,\n\
+Miniboss (Big ROUS, drops Bloodbite Ring)"];
 	us20 -- us33 [dir=forward label="Locked door (Grave Key, bought at Firelink Shrine.)"];
 	us20 -- us22 [dir=forward label="Ladder and a door that opens from this side"];
 	us22 [label="Bonfire (Dilapidated Bridge)"];
@@ -136,8 +143,10 @@ subgraph clusterUndeadSettlement {
 	us18 -- us32 [dir=forward label="Get knocked down by thrown cauldron"];
 	us32 [label="Titanite shard"];
 	us32 -- us33 [label="Stairs"];
-	us32 -- us34 [label="Tunnel, shoot down hanging body with loot (Blessed Red and White Shield)"];
-	us33 [label="Crypt with skeletons, Red Hilted Halberd, Loincloth, statue of Velka"];
+	us32 -- us34 [label="Tunnel, shoot down hanging body with loot\n\
+(Blessed Red and White Shield)"];
+	us33 [label="Crypt with skeletons, Red Hilted Halberd,\n\
+Loincloth, statue of Velka"];
 	us34 [label="ROUSs, Saint's Talisman"];
 	us34 -- us36 [label="Ladder"];
 	us36 -- us37 [label="Door opens from this side"];
@@ -153,7 +162,8 @@ subgraph clusterUndeadSettlement {
 	us38 -- us41 [label="Elevator up, jump off halfway"];
 	us41 [label="Siegward again"];
 	us41 -- us42 [dir=forward label="Drop down"];
-	us42 [label="Miniboss (Fire Demon, Siegward helps fight, does not respawn), Large Club, Pale Tongue, Northern clothes set"];
+	us42 [label="Miniboss (Fire Demon, Siegward helps fight, does not respawn),\n\
+Large Club, Pale Tongue, Northern clothes set"];
 	us42 -- us43 [label="Stairs"];
 	us43 [label="Chest, Human Pine Resin x4"];
 	us43 -- us44;
@@ -568,6 +578,8 @@ Miniboss (Big lizard, drops Pontiff's Right Eye)"];
 	bv11 [label="Bonfire (Church of Yorshka), Proof of a Concord Kept"];
 	bv11 -- bv12;
 	bv11 -- bv13;
+	bv13 [label="Chamber with rafters"];
+	bvxx -- bv13 [dir=forward label="Drop down"];
 	bv10 -- bv14 [dir=forward label="Big door, locked from this side"];
 	bv10 -- bv9;
 	bv10 -- bv9;
@@ -612,7 +624,8 @@ Knight (drops Large Titanite Shard & Divine Blessing), Archer on balcony"];
 Chests (Leo Ring, Smough's Great Hammer, Divine Blessing)"];
 	bv28 -- bv32;
 	bv32 [label="Streets, Large Titanite Shard"];
-	bv32 -- bv33 [label="Elevator"];
+	bv32 -- bv8;
+	bv8 [label="Elevator"];
 	bv32 -- bv34;
 	bv32 -- bv35 [dir=forward label="Drop down"];
 	bv35 [label="Large Titanite Shard"];
@@ -682,9 +695,14 @@ Mimic (Symbol of Avarice, Golden Ritual Spear)"];
 	bv64 [label="Balcony, Moonlight Arrow x6, Proof of a Concord Kept"];
 	bv64 -- bv61;
 	bv61 -- bv65;
-	bv65 [label="BOSS (Aldrich, Devourer of Gods)"];
+	bv65 [shape=box label="BOSS (Aldrich, Devourer of Gods)"];
 	bv61 [shape=box label="Great chamber, lever to open door, big cursing spider (drops Aldrich's Ruby)"];
 	bv63 [label="Green door (cannot open)"];
+	bv65 -- bv66 [label="Automated elevator"];
+	bv65 -- bv66 [label="Automated elevator"];
+	bv66 [label="Balcony"];
+	bv66 -- bv67;
+	bv67 [label="Sun Princess Ring"];
 
 	// [label=""];
 }
@@ -695,6 +713,139 @@ subgraph clusterIrithyllDungeon {
 	label = "Irithyll Dungeon";
 
 	id1 [label="Bonfire (Irithyll Dungeon)"];
+	id1 -- id2;
+	id1 -- id49 [dir=forward label="Locked from this side"];
+	id2 -- id3 [dir=forward label="Locked door (Jailer's Key Ring)"];
+	id2 -- id4;
+	id4 [label="Enemy drops Simple Gem"];
+	id4 -- id5;
+	id5 [label="Top balcony"];
+	id5 -- id6 [dir=forward label="Drop down (or be pushed down by ambush)"];
+	id6 [label="Corridor, Old Sorcerer clothes set"];
+	id6 -- id7 [label="Door"];
+	id7 [label="Enemy drops Great Magic Shield"];
+	id6 -- id8 [dir=forward label="Locked door (Jailer's Key Ring)"];
+	id8 [label="Prisoner Chief's Ashes"];
+	id6 -- id9;
+	id9 -- id8 [dir=forward label="Locked door (Jailer's Key Ring)"];
+	id9 -- id5;
+	id5 -- id54 [dir=forward label="Locked floor-length window to cavern (opens with Jailbreaker's Key), drop down"];
+	id54 [label="Bellowing Dragoncrest Ring"];
+	id54 -- id15 [dir=forward label="Drop down"];
+	id5 -- id10 [label="Bridge"];
+	id10 [label="Top balcony on other side"];
+	id10 -- id11;
+	id11 [label="Cells"];
+	id11 -- id12 [dir=forward label="Door"];
+	id12 [label="Other part of balcony, Jailbreaker's Key"];
+	id10 -- id12 [dir=forward label="Locked from this side"];
+	id12 -- id13 [dir=forward label="Drop down"];
+	id13 [label="Corridor, Crystal Bug (Titanite Scale)"];
+	id12 -- id14;
+	id14 [label="Simple Gem"];
+	id13 -- id14;
+	id13 -- id25 [dir=forward label="Locked from this side"];
+	id13 -- id15;
+	id15 [label="Great cavern, high roadlet"];
+	id15 -- id16;
+	id16 [shape=box label="Mimic (Estus Shard)"];
+	id16 -- id17;
+	id17 [label="Corridor"];
+	id17 -- id18 [dir=forward label="Drop down"];
+	id17 -- id18 [dir=forward label="Drop down"];
+	id17 -- id18 [label="Ladder"];
+	id17 -- id19 [dir=forward label="Drop down"];
+	id18 [label="Balcony with sleeping giant, Crystal Bug (Titanite Chunk)"];
+	id18 -- id20 [label="Ladder"];
+	id19 -- id18 [dir=forward label="Drop down"];
+	id19 [label="Upper rear of giant's room"];
+	id19 -- id20 [dir=forward label="Drop down"];
+	id20 [label="Pickaxe"];
+	id20 -- id21;
+	id21 [label="Sewer, Chest (Old Cell Key),\n\
+Mimic (spawns curse-frogs, drops Dark Clutch Ring)"];
+	id20 -- id48 [dir=forward label="Drop down"];
+	id21 -- id22 [label="Tunnel"];
+	id22 [shape=box label="Room"];
+	id22 -- id23 [label="Door"];
+	id23 [shape=box label="Great chamber with jailors, Mimic (Titanite Scale x2)"];
+	id23 -- id24;
+	id23 -- id26;
+	id23 -- id55 [label="Locked door (Jailer's Key Ring)"];
+	id55 [shape=box label="Karla"];
+	id24 [label="Outside balcony (nice view), Dragon Torso Stone"];
+	id24 -- id25;
+	id25 [label="Elevator, jump off halfway for Lightning Blade"];
+	id26 [shape=box label="Profaned Coal"];
+	id26 -- id23;
+	id23 -- id27;
+	id27 [shape=box label="Xanthous Ashes, Dusk Crown Ring"];
+	id23 -- id28;
+	id28 [label="Enemy (drops nothing)"];
+	id23 -- id29;
+	id29 [label="Cavern road"];
+	id29 -- id30;
+	id30 [label="Cavern tower"];
+	id30 -- id34 [label="Very hard jump puzzle?"];
+	id30 -- id31 [dir=forward label="Drop down"];
+	id30 -- id31 [label="Ladder"];
+	id31 [label="Tower floor"];
+	id34 -- id35 [label="Ladder"];
+	id31 -- id32 [dir=forward label="Drop down"];
+	id32 [label="Outside the tower"];
+	id44 -- id32 [dir=forward label="Drop down"];
+	id32 -- id39;
+	id32 -- id33 [label="Ladder"];
+	id33 [label="Rusted Coin x2"];
+	id33 -- id31 [dir=forward label="Drop down"];
+	id31 -- id34 [label="Ladder"];
+	id34 [label="Stretch out, Undead Bone Shard, Bonfire (Profaned Capital)"];
+	id35 [label="Bridge, Onislayer Greatarrow x8"];
+	id35 -- id36;
+	id35 -- id37 [dir=forward label="Drop down"];
+	id36 [label="Handmaids (use fire), Gargoyle (drops Gargoyle Flame Hammer),\n\
+Chest (Ember), Mimics (Greatshield of Glory, Rusted Gold Coin x2)"];
+	id36 -- id37;
+	id36 -- id38;
+	id37 [label="Road"];
+	id38 [label="BOSS (Yhorm the Giant)"];
+	id39 [label="Corridors, Crystal Bugs (Twinkling Titanite x2)"];
+	id39 -- id46;
+	id39 -- id40 [dir=forward label="Drop down"];
+	id39 -- id40 [dir=forward label="Drop down"];
+	id40 [label="Toxic swamp, Poison Gem, Cursebite Ring,\n\
+Purging Stone, Shriving Stone"];
+	id40 -- id41 [label="Big door"];
+	id41 [label="Miniboss (hand-whale-monsters, drops Eleonora)"];
+	id40 -- id42 [label="Ladder"];
+	id42 [label="Lower roof"];
+	id42 -- id43;
+	id42 -- id44;
+	id43 [label="Upper roof, Hunter (drops Logan's Scroll), Poison Arrow x18"];
+	id43 -- id45;
+	id43 -- id47 [dir=forward label="Drop down"];
+	id47 [shape=box label="Wrath of the Gods"];
+	id47 -- id44 [dir=forward label="Drop down"];
+	id45 [label="Irithyll dungeon, Giant's room (lower corridor), Jailer's Key Ring"];
+	id45 -- id48 [dir=forward label="Drop down"];
+	id44 [label="Sleeping monster, Court Sorcerer clothes set,\n\
+Mimic (Symbol of Avarice & Court Sorcerer's Staff), Rubbish"];
+	id46 [label="Wooden platform"];
+	id46 -- id40 [dir=forward label="Drop down"];
+	id48 [label="Floor of giant's room, Profaned Flame, Titanite Chunk"];
+	id48 -- id49;
+	id49 [label="Elevator"];
+	id48 -- id50;
+	id50 [shape=box label="Mimic (Dragonslayer Lightning Arrow x10)"];
+	id50 -- id51 [label="Ladder"];
+	id51 [shape=box label="Empty room"];
+	id51 -- id52 [dir=forward label="Drop down"];
+	id52 [label="Wooden rooflet, Lightning Bolt x9"];
+	id52 -- id17 [dir=forward label="Drop down"];
+	id52 -- id18 [dir=forward label="Drop down"];
+	id43 -- id53 [label="Jump through window"];
+	id53 [label="Siegward (Old Cell Key needed),\n\
+Titanite Slab, Covetous Gold Serpent Ring"];
 
 	// [label=""];
 }
