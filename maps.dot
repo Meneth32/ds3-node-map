@@ -75,7 +75,39 @@ subgraph clusterHighwall {
 	q [label="Exit" shape=box];
 	n -- 3;
 	3 [label="Elevator"];
+
+	hw56 [label="BOSS (Oceiros, the Consumed King)"];
+	hw56 -- hw57;
+	hw57 [label="Path of the Dragon, Titanite Scale"];
+
+	// [label=""];
 }
+
+hw57 -- cf58 [dir=forward label="Illusory wall, drop down"];
+
+subgraph clusterDarkCemetary {
+	label = "Dark Cemetary of Ash";
+
+	cf58 [label="Bonfire (Untended Graves), Shriving Stone"];
+	cf58 -- cf59;
+	cf59 [label="Crossroads"];
+	cf59 -- cf60;
+	cf59 -- cf61;
+	cf60 [label="Ashen Estus Ring"];
+	cf61 [label="Titanite Chunk x2"];
+	cf61 -- cf62;
+	cf62 [label="Dark spirit (Daughter of Crystal Kriemhild)"];
+	cf61 -- cf63;
+	cf63 [label="2 Crystal Beasts (drop Titanite Scale x2 each)"];
+	cf62 -- cf64;
+	cf64 [label="Hidden Blessing"];
+	cf64 -- cf65;
+	cf65 [label="Black Knight Glaive, BOSS (Campion Gundyr)"];
+
+	// [label=""];
+}
+
+o -- lc1;
 
 q -- us1 [dir=forward];
 
@@ -484,7 +516,8 @@ Skeletons (can also attack the demon)"];
 	cc22 -- cc23;
 	cc23 [label="Old Sage's Blindfold, Witch's Ring, Bonfire (Abandoned Tomb)"];
 	cc23 -- cc24;
-	cc24 [label="Smouldering Lake, Large Titanite Shard x4, Miniboss? (Great Worm), Shield of Want,\n\
+	cc24 [label="Smouldering Lake, Large Titanite Shard x4, Shield of Want,\n\
+Miniboss (Great Worm, drops Lightning Stake & Undead Bone Shard),\n\
 many Ember Giant Enemy Crabs (rarely drop Large Titanite Shard), Chaos Gem,\n\
 Speckled Stoneplate Ring (behind a brick wall; trick the ballista into destroying the wall)"];
 	cc24 -- cc25 [label="Fog door"];
@@ -849,5 +882,166 @@ Titanite Slab, Covetous Gold Serpent Ring"];
 
 	// [label=""];
 }
+
+subgraph clusterLothricCastle {
+	label = "Lothric Castle";
+
+	lc1 [label="Start"];
+	lc1 -- lc2;
+	lc1 -- lc3;
+	lc2 [label="Balcony"];
+	lc2 -- lcx1 [dir=forward label="Locked from this side"];
+	lc2 -- lc4 [label="Elevator"];
+	lc3 [label="Burial chamber"];
+	lc3 -- lc26 [dir=forward label="Elevator (contraption does not move)"];
+	lc3 -- lc5;
+	lc5 [shape=box label="Bonfire (Lothric Castle)"];
+	lc5 -- lc6;
+	lc5 -- lc1 [dir=forward label="Drop down"];
+	lc6 [shape=box label="Prayer clothes set"];
+	lc6 -- lc7;
+	lc7 [label="Outside balcony, Titanite Chunk x4"];
+	lc7 -- lc8;
+	lc7 -- lc9;
+	lc8 [label="Fat knight"];
+	lc8 -- lc10 [label="Ladder, Illusory wall"];
+	lc10 [label="Winged Knight clothes set, Sacred Bloom Shield"];
+	lc9 [label="Bonfire (Dragon Barracks)"];
+	lc9 -- lc11;
+	lc18 -- lc9 [dir=forward label="Drop down"];
+	lc11 [label="Upper battlements, Greatlance"];
+	lc11 -- lc23 [dir=forward label="Drop down"];
+	lc19 [label="Canal, Titanite Chunk x2, Twinkling Titanite x2"];
+	lc11 -- lc12 [label="Bridge"];
+	lc12 [shape=box label="Dragons, who can be slain by 99 arrows,\n\
+given a strong enough bow. If your bow is weak, reinforce it,\n\
+buy stronger arrows and bring a crossbow too.\n\
+Refined Gem"];
+	lc12 -- lc13;
+	lc12 -- lc14;
+	lc12 -- lc25 [dir=forward label="Closed portcullis"];
+	lc13 [shape=box label="Room with stairs and an\n\
+eldritch abomination sticking out of a doorway (drops Titanite Chunk x2),\n\
+Mimic (Titanite Scale x2)"];
+	lc13 -- lc15;
+	lc15 [label="Balcony, Titanite Chunk,\n\
+Crystal Bug (Twinkling Titanite x2), Titanite Scale"];
+	lc15 -- lc12 [dir=forward label="Drop down"];
+	lc15 -- lc18 [dir=forward label="Drop down (hurts)"];
+	lc18 [label="Crystal Bug (Twinkling Titanite x2)"];
+	lc13 -- lc16;
+	lc16 [label="Lever that opens portcullis"];
+	lc16 -- lc25 [dir=forward label="Drop down"];
+	lc13 -- lc17;
+	lc17 [shape=box label="Small garden, Titanite Scale"];
+	lc19 -- lc18;
+	lc18 -- lc20;
+	lc20 [label="Fat knight, Sniper Crossbow"];
+	lc14 [label="Raw gem"];
+	lc14 -- lc21;
+	lc21 [shape=box label="Miniboss (drops Irithyll Rapier),\n\
+Chests (Spirit Tree Crest Shield, Twinkling Titanite, Titanite Scale, Twinkling Titanite x2)"];
+	lc14 -- lc22;
+	lc22 -- lc23;
+	lc22 [label="Enemies, spawns abomination in canal.\n\
+Conjecture: The abomination can eat your dropped souls,\n\
+and in doing so gains an extra life.\n\
+Your dropped souls and one copy of his loot is dropped on his first defeat,\n\
+then he respawns immediately.\n\
+When defeated a second time, he is gone for good."];
+	lc23 [label="Canal edge, Titanite Chunk"];
+	lc23 -- lc19 [dir=forward label="Drop down"];
+	lc11 -- lc24 [dir=forward label="Drop down"];
+	lc24 [label="Canal edge, Undead Bone Shard"];
+	lc24 -- lc19 [dir=forward label="Drop down"];
+	lc25 [label="Entry hall"];
+	lc25 -- lc26;
+	lc26 [label="Sunlight Medal"];
+	lc26 -- lc27;
+	lc27 [label="BOSS (Dragonslayer Armor)"];
+	lc26 -- lc28;
+	lc28 [label="Chest (Titanite Scale)"];
+	lc28 -- lcx8 [dir=forward label="Elevator (Contraption does not move)"];
+	lc28 -- lc29;
+	lc29 [label="Red Tearstone Ring"];
+	lc26 -- lc30 [label="Ladder"];
+	lc26 -- lc32 [dir=forward label="Locked from this side"];
+	lc30 [label="Roof, Titanite Chunk"];
+	lc30 -- lc31;
+	lc31 [label="Knight's Ring"];
+	lc31 -- lc32;
+	lc32 [label="Chest (Titanite Scale x3), Sunlight Altar"];
+	lc27 -- lc33;
+	lc33 [label="Titanite Chunk"];
+	lc33 -- lc34;
+	lc34 [label="Bonfire (Grand Archives), Grand Archives Key, Gotthard Twinswords"];
+	lc34 -- lc35 [label="Big door (open with Grand Archives Key)"];
+	lc34 -- lcx9 [dir=forward label="Elevator (Contraption does not move)"];
+	lc35 [label="Archive entrance, Titanite Chunk, Miniboss (Freeze Sage, teleports around to nearby areas)"];
+	lc35 -- lc36 [dir=forward label="Drop down"];
+	lc36 [label="Archive maze, Titanite Chunk x2,\n\
+Crystal Bug (Crystal Gem & Twinkling Titanite),\n\
+'Dunk head in wax', Titanite Scale, Crystal Chime"];
+	lc36 -- lc35 [dir=forward label="Drop down"];
+	lc36 -- lc37;
+	lc37 [label="Dark misty room, Crystal Bugs (Twinkling Titanite x2, Chaos Gem),\n\
+Lever of unknown function, Titanite Scale"];
+	lc37 -- lc38;
+	lc38 [label="Balconies, Crystal Bug (Twinkling Titanite x2),\n\
+Titanite Chunk x2, 'Dunk head in wax'"];
+	lc39 [label="Top of bookshelf, Titanite Scale"];
+	lc39 -- lc38 [dir=forward label="Drop down"];
+	lc40 -- lc39 [dir=forward label="Drop down"];
+	lc52 -- lc38 [dir=forward label="Drop down"];
+	lc52 [label="Roof, Titanite Scale x3"];
+	lc40 [label="Upper balconies, Freeze Sage, Titanite Scale x2"];
+	lc38 -- lc40;
+	lc40 -- lc41 [label="Illusory wall"];
+	lc41 [label="Miniboss (Ice sword guy, drops Outrider Knight clothes set)"];
+	lc40 -- lc42 [dir=forward label="Drop down"];
+	lc42 [label="Bridge, Shriving Stone,\n\
+Freeze Sage (drops Crystal Scroll, does not respawn)"];
+	lc40 -- lc42 [label="Ladder"];
+	lc42 -- lc43;
+	lc43 [label="Outside balcony, Knight"];
+	lc42 -- lc44;
+	lc42 -- lc54 [dir=forward label="Drop down"];
+	lc54 [label="Crystal Bug (Titanite Scale x2)"];
+	lc44 -- lc45 [label="Elevator"];
+	lc45 -- lc35 [dir=forward label="Lever opens wall"];
+	lc44 -- lc46;
+	lc46 [label="Balcony"];
+	lc46 -- lc47;
+	lc47 [label="Fleshbite Ring"];
+	lc47 -- lc48;
+	lc48 [label="Outside balcony"];
+	lc48 -- lc49 [label="Ladder"];
+	lc49 [label="Roof, Titanite Chunk"];
+	lc49 -- lc50 [dir=forward label="Drop down, hurts"];
+	lc50 [label="Big roof, Hollow Gem"];
+	lc49 -- lc51 [dir=forward label="Drop down, hurts"];
+	lc51 [label="Small roof, Titanite Chunk"];
+	lc51 -- lc43 [dir=forward label="Drop down"];
+	lc51 -- lc50;
+	lc50 -- lc52 [dir=forward label="Drop down"];
+	lc41 -- lc53;
+	lc53 [label="Soul Stream"];
+	lc54 -- lc36 [dir=forward label="Drop down"];
+	lc4 [label="The Consumed King's Garden, Shadow clothes set, Claw,\n\
+Titanite Chunk x2, Dark Gem"];
+	lc4 -- lc55;
+	lc55 [label="Courtyard"];
+	lcx15 [label="Enemy"];
+	lcx15 -- lc55 [dir=forward label="Drop down"];
+	lc2 -- lc57 [label="Elevator (jump off in the middle)"];
+	lc57 -- lc58 [dir=forward label="Drop down"];
+	lc57 [label="Estus Shard"];
+	lc58 [label="Titanite Chunk"];
+	lc58 -- lc4 [dir=forward label="Drop down"];
+
+	// [label=""];
+}
+
+lc55 -- hw56;
 
 }
