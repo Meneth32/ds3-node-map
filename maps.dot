@@ -1,8 +1,5 @@
 // Unexplored nodes:
-// h
-// bvxx
-// bv4
-
+// none
 
 graph maps {
 	bgcolor=black;
@@ -26,7 +23,7 @@ subgraph clusterHighwall {
 	2 [label="Miniboss (Worm monster)"];
 	a -- 4;
 	a -- 5;
-	4 -- 5;
+	4 -- 5 [dir=forward label="Drop down, Gold Pine Resin x2"];
 	4 [label="Enemies, grenadier, Binoculars"];
 	5 -- c [label="Ladder"];
 	c -- d;
@@ -43,7 +40,10 @@ subgraph clusterHighwall {
 	g [label="Bonfire (Tower on the Wall)"];
 	7 -- 8;
 	7 -- 9;
-	9 -- h [label="Locked door (key not yet found?)"];
+	9 -- h [label="Locked door (Lift Chamber Key)"];
+	h [label="Elevator"];
+	h -- hx1;
+	hx1 [label="Knight (drops Red Eye Orb)"];
 	9 -- 10;
 	10 [label="Mail Breaker"];
 	10 -- 11 [label="Locked (Cell Key)"];
@@ -76,14 +76,8 @@ subgraph clusterHighwall {
 	n -- 3;
 	3 [label="Elevator"];
 
-	hw56 [label="BOSS (Oceiros, the Consumed King)"];
-	hw56 -- hw57;
-	hw57 [label="Path of the Dragon, Titanite Scale"];
-
 	// [label=""];
 }
-
-hw57 -- cf58 [dir=forward label="Illusory wall, drop down"];
 
 subgraph clusterDarkCemetary {
 	label = "Dark Cemetary of Ash";
@@ -102,7 +96,12 @@ subgraph clusterDarkCemetary {
 	cf62 -- cf64;
 	cf64 [label="Hidden Blessing"];
 	cf64 -- cf65;
-	cf65 [label="Black Knight Glaive, BOSS (Campion Gundyr)"];
+	cf65 [label="Black Knight Glaive, BOSS (Champion Gundyr)"];
+	cf65 -- cf66;
+	cf66 [label="Black Knights (drop Gauntlets and Leggings), Hornet Ring, Chaos Blade"];
+	cf66 -- cf67;
+	cf67 [label="Dark Firelink Shrine, Coiled Sword Fragment, Blacksmith Hammer,\n\
+Hollow's Ashes, Eyes of a Fire Keeper (behind illusory wall)"];
 
 	// [label=""];
 }
@@ -480,7 +479,9 @@ subgraph clusterCatacombsOfCarthus {
 	cc4 -- cc7 [label="Ladder"];
 	cc7 [label="Corridor, Sharp Gem"];
 	cc7 -- cc5;
-	cc5 -- cc8 [label="Stairs through abyss (trapped, loot)"];
+	cc5 -- cc55 [label="Stairs through abyss (trapped, loot)"];
+	cc55 [label="Corridor, kill skeleton with hat to break ball, drops Undead Bone Shard"];
+	cc55 -- cc8;
 	cc5 -- cc9 [label="Corridor"];
 	cc5 [shape=box label="Titanite Shard x2"];
 	cc9 [label="Platform over abyss, Crystal Bug (Twinkling Titanite)"];
@@ -600,6 +601,10 @@ Miniboss (Big lizard, drops Pontiff's Right Eye)"];
 	bv5 [label="Round plaza, blue flowers"];
 	bv5 -- bv6;
 	bv6 [label="Road, Crystal Bug (Twinkling Titanite)"];
+	bv6 -- bvy1 [label="Illusory railing"];
+	bvy1 [label="Large Titanite Shard"];
+	bvy1 -- bv4 [dir=forward label="Drop down"];
+	bv4 [label="Evangelist (drops Dorhy's Gnawing), Witchtree Branch"];
 	bv6 -- bv7;
 	bv7 [label="Outer Courtyard, Large Titanite Shard x3"];
 	bv7 -- bv8 [dir=forward label="Locked from this side"];
@@ -612,7 +617,7 @@ Miniboss (Big lizard, drops Pontiff's Right Eye)"];
 	bv11 -- bv12;
 	bv11 -- bv13;
 	bv13 [label="Chamber with rafters"];
-	bvxx -- bv13 [dir=forward label="Drop down"];
+	bv71 -- bv13 [dir=forward label="Drop down"];
 	bv10 -- bv14 [dir=forward label="Big door, locked from this side"];
 	bv10 -- bv9;
 	bv10 -- bv9;
@@ -631,6 +636,9 @@ Miniboss (Big lizard, drops Pontiff's Right Eye)"];
 	bv20 [label="Dark cellar with ghosts"];
 	bv20 -- bv21 [label="Ladder"];
 	bv21 [label="Rafters, Shriving Stone"];
+	bv21 -- bv21b [dir=forward label="Drop down"];
+	bv21b [label="Chest (Yorshka's Spear)"];
+	bv21b -- bv20 [dir=forward label="Drop down"];
 	bv20 -- bv22;
 	bv21 -- bv22 [dir=forward label="Outside, drop down"];
 	bv22 [label="Upper balcony"];
@@ -691,7 +699,8 @@ Two warriors (drop Drang Twinspears), fireballs from above, giants wake up."];
 Mimic (Symbol of Avarice, Golden Ritual Spear)"];
 	bv45 -- bv37 [label="Elevator"];
 	bv43 -- bv47 [label="Illusory wall, ladder"];
-	bv47 [shape=box label="Miniboss (two great lizards), Human Dregs"];
+	bv47 [shape=box label="Miniboss (two great lizards, drop Ring of Favor),\n\
+Human Dregs, Deep Gem, Bonfire (Water Reserve)"];
 	bv39 -- bv48;
 	bv48 [label="Empty roof"];
 	bv39 -- bv49 [dir=forward label="Drop down"];
@@ -723,7 +732,7 @@ Mimic (Symbol of Avarice, Golden Ritual Spear)"];
 	bv60 -- bv61 [dir=forward label="Big door (locked by some contraption)"];
 	bv60 -- bv62;
 	bv60 -- bv63;
-	bv62 [shape=box label="Room with stairs, Giant's Coal"];
+	bv62 [shape=box label="Room with stairs, Giant's Coal, Chest (Estus Shard)"];
 	bv62 -- bv64;
 	bv64 [label="Balcony, Moonlight Arrow x6, Proof of a Concord Kept"];
 	bv64 -- bv61;
@@ -736,6 +745,15 @@ Mimic (Symbol of Avarice, Golden Ritual Spear)"];
 	bv66 [label="Balcony"];
 	bv66 -- bv67;
 	bv67 [label="Sun Princess Ring"];
+	bv54 -- bv68 [label="Illusory wall"];
+	bv68 [shape=box label="Big corridor, Brass clothes set"];
+	bv68 -- bv69;
+	bv69 [shape=box label="Chest (Reversal Ring)"];
+	bv58 -- bv70 [dir=forward label="Invisible bridge, drop down"];
+	bv70 [label="Bonfire (Prison Tower)"];
+	bv70 -- bv71 [dir=forward label="Drop down"];
+	bv71 [label="Painting Guardian's Curved Sword,\n\
+Painting Guardian clothes set"];
 
 	// [label=""];
 }
@@ -819,7 +837,6 @@ Mimic (spawns curse-frogs, drops Dark Clutch Ring)"];
 	id29 [label="Cavern road"];
 	id29 -- id30;
 	id30 [label="Cavern tower"];
-	id30 -- id34 [label="Very hard jump puzzle?"];
 	id30 -- id31 [dir=forward label="Drop down"];
 	id30 -- id31 [label="Ladder"];
 	id31 [label="Tower floor"];
@@ -958,12 +975,20 @@ When defeated a second time, he is gone for good."];
 	lc25 -- lc26;
 	lc26 [label="Sunlight Medal"];
 	lc26 -- lc27;
+	lc26 -- lcx2 [dir=forward label="Drop down, hurts"];
+	lcx2 [label="Mimic (Sunlight Straight Sword), Braille Divine Tome of Lothric"];
+	lcx2 -- lc12 [dir=forward label="Drop down, hurts"];
 	lc27 [label="BOSS (Dragonslayer Armor)"];
 	lc26 -- lc28;
 	lc28 [label="Chest (Titanite Scale)"];
-	lc28 -- lcx8 [dir=forward label="Elevator (Contraption does not move)"];
+	lc28 -- lc71 [dir=forward label="Elevator (Contraption does not move)"];
+	lc28 -- lc73 [label="Elevator downwards"];
+	lc73 [label="Titanite slab"];
 	lc28 -- lc29;
 	lc29 [label="Red Tearstone Ring"];
+	lc29 -- lcy1 [dir=forward label="Drop down, hurts"];
+	lcy1 [label="Roof, Caitha's Chime"];
+	lcy1 -- lc22 [dir=forward label="Drop down"];
 	lc26 -- lc30 [label="Ladder"];
 	lc26 -- lc32 [dir=forward label="Locked from this side"];
 	lc30 [label="Roof, Titanite Chunk"];
@@ -976,12 +1001,12 @@ When defeated a second time, he is gone for good."];
 	lc33 -- lc34;
 	lc34 [label="Bonfire (Grand Archives), Grand Archives Key, Gotthard Twinswords"];
 	lc34 -- lc35 [label="Big door (open with Grand Archives Key)"];
-	lc34 -- lcx9 [dir=forward label="Elevator (Contraption does not move)"];
+	lc34 -- lc64 [dir=forward label="Elevator (Contraption does not move)"];
 	lc35 [label="Archive entrance, Titanite Chunk, Miniboss (Freeze Sage, teleports around to nearby areas)"];
 	lc35 -- lc36 [dir=forward label="Drop down"];
 	lc36 [label="Archive maze, Titanite Chunk x2,\n\
 Crystal Bug (Crystal Gem & Twinkling Titanite),\n\
-'Dunk head in wax', Titanite Scale, Crystal Chime"];
+'Dunk head in wax' (protects against cursing hands), Titanite Scale, Crystal Chime"];
 	lc36 -- lc35 [dir=forward label="Drop down"];
 	lc36 -- lc37;
 	lc37 [label="Dark misty room, Crystal Bugs (Twinkling Titanite x2, Chaos Gem),\n\
@@ -1010,9 +1035,9 @@ Freeze Sage (drops Crystal Scroll, does not respawn)"];
 	lc44 -- lc45 [label="Elevator"];
 	lc45 -- lc35 [dir=forward label="Lever opens wall"];
 	lc44 -- lc46;
-	lc46 [label="Balcony"];
+	lc46 [label="Balcony, Chest (Titanite Scale x3)"];
 	lc46 -- lc47;
-	lc47 [label="Fleshbite Ring"];
+	lc47 [label="Fleshbite Ring, Crytal Bug (Twinkling Titanite, ??? Gem)"];
 	lc47 -- lc48;
 	lc48 [label="Outside balcony"];
 	lc48 -- lc49 [label="Ladder"];
@@ -1028,20 +1053,138 @@ Freeze Sage (drops Crystal Scroll, does not respawn)"];
 	lc53 [label="Soul Stream"];
 	lc54 -- lc36 [dir=forward label="Drop down"];
 	lc4 [label="The Consumed King's Garden, Shadow clothes set, Claw,\n\
-Titanite Chunk x2, Dark Gem"];
+Titanite Chunk x2, Dark Gem, Ring of Sacrifice"];
 	lc4 -- lc55;
 	lc55 [label="Courtyard"];
-	lcx15 [label="Enemy"];
 	lcx15 -- lc55 [dir=forward label="Drop down"];
+	lc4 -- lcy3;
+	lcy3 [label="Elevator"];
+	lcy3 -- lcx15 [dir=forward label="Jump off in the middle"];
+	lcx15 [label="Dragonscale Ring"];
+	lcy3 -- lcx1;
+	lcx1 [label="Titanite Scale, Titanite Chunk"];
 	lc2 -- lc57 [label="Elevator (jump off in the middle)"];
 	lc57 -- lc58 [dir=forward label="Drop down"];
 	lc57 [label="Estus Shard"];
 	lc58 [label="Titanite Chunk"];
 	lc58 -- lc4 [dir=forward label="Drop down"];
+	lc49 -- lc59;
+	lc59 [label="Roofs, Crystal Bugs (Twinking Titanite & Heavy Gem,\n\
+Twinking Titanite & Sharp Gem)"];
+	lc59 -- lc49 [dir=forward label="Drop down"];
+	lc59 -- lc60 [dir=forward label="Drop down"];
+	lc60 [label="Roofs, Titanite Chunk"];
+	lc60 -- lc61 [dir=forward label="Drop down"];
+	lc61 [label="Upper balcony, Undead Bone Shard"];
+	lc61 -- lc46 [dir=forward label="Kick ladder"];
+	lc61 -- lc62;
+	lc62 [label="Courtyard, Hunter trio (drops Golden Wing Crest Shield,\n\
+Onikiri and Ubadachi, Sage's Crystal Staff)"];
+	lc61 -- lc63;
+	lc63 [label="Titanite Chunk x2"];
+	lc62 -- lc64;
+	lc64 [label="Antechamber"];
+	lc64 -- lc65;
+	lc65 [label="Roof, Estus Shard, Fat Winged Knights (may drop Titanite Slab)"];
+	lc65 -- lc67 [dir=forward label="Drop down"];
+	lc65 -- lc66 [label="Ladder"];
+	lc66 [label="Tower, Hunter's Ring"];
+	lc64 -- lc71;
+	lc67 [label="Cage, Divine Pillars of Light"];
+	lc67 -- lc68 [dir=forward label="Drop down"];
+	lc68 [label="Wooden rafters, Blessed Gem"];
+	lc68 -- lc69 [dir=forward label="Drop down"];
+	lc69 [label="Metal rafters"];
+	lc69 -- lc70 [label="Ladder"];
+	lc70 [label="Balcony, Chests (Twinkling Titanite x3, Divine Blessing)"];
+	lc70 -- lc47 [dir=forward label="Drop down"];
+	lc71 [shape=box label="Battle road"];
+	lc71 -- lc72 [label="Big door"];
+	lc72 [label="BOSS (Twin Princes)"];
 
 	// [label=""];
 }
 
 lc55 -- hw56;
+
+	hw56 [label="BOSS (Oceiros, the Consumed King)"];
+	hw56 -- hw57;
+	hw57 [label="Path of the Dragon, Titanite Scale,\n\
+Drakeblood clothes set (after clearing Archdragon Peak)"];
+
+hw57 -- cf58 [dir=forward label="Illusory wall, drop down"];
+
+id24 -- ap1 [dir=forward label="Use 'Path of the Dragon' gesture"];
+
+subgraph clusterArchdragonPeak {
+	label = "Archdragon Peak";
+
+	ap1 [label="Start, Lightning Gem"];
+	ap1 -- ap2;
+	ap2 [label="Bonfire (Archdragon Peak), Titanite Chunk"];
+	ap1 -- apx1 [dir=forward label="Contraption does not move"];
+	ap2 -- ap4;
+	ap6 -- ap5;
+	ap4 [label="Battlements, Ancient Dragon Greatshield"];
+	ap5 [label="Lightning Clutch Ring"];
+	ap2 -- ap6;
+	ap4 -- ap6;
+	ap6 -- ap7 [label="Portcullis, lever"];
+	ap7 [label="BOSS (Ancient Wyvern),\n\
+Titanite Chunk x2, Twinkling Titanite x4"];
+	ap7 -- ap8 [dir=forward label="Teleport when you beat the boss"];
+	ap8 [label="Bonfire (Dragon-Kin Mausoleum)"];
+	ap8 -- ap9;
+	ap9 [label="Hunter Summoner (Hunter drops Dragonblood Greatsword)"];
+	ap9 -- ap10;
+	ap10 [label="Balcony"];
+	ap10 -- ap7 [dir=forward label="Drop down"];
+	ap9 -- ap11;
+	ap11 [label="Upper level, Dragonslayer Spear"];
+	ap9 -- ap7;
+	ap10 -- ap11;
+	ap11 -- ap12;
+	ap12 [label="Balcony, Titanite Scale"];
+	ap11 -- ap13;
+	ap13 [label="Balconies"];
+	ap13 -- ap14 [label="Ladder"];
+	ap13 -- ap15;
+	ap13 -- ap16;
+	ap14 [label="Thunder Stoneplate Ring"];
+	ap14 -- ap16 [dir=forward label="Drop down"];
+	ap15 [label="Wooden balcony"];
+	ap16 [label="Wooden balcony"];
+	ap16 -- ap17;
+	ap17 [label="Crystal Bug (Twinkling Titanite x3), Chest (Titanite Scale x3)"];
+	ap18 [label="Cliffside, dragon, Soul of a Weary Warrior"];
+	ap18 -- ap17 [dir=forward label="Drop down"];
+	ap17 -- ap18;
+	ap18 -- ap19;
+	ap19 [label="Hunter Summoner (Hunter drops Ricard's Rapier)"];
+	ap19 -- ap20;
+	ap20 [label="To trave the Path of the Dragon,\n\
+do not ring the great bell,\n\
+Nothing will remain\n\
+once the bell has tolled.\n\
+Lever (rings the bell, opens path to a BOSS, disables all other paths)"];
+	ap20 -- ap21;
+	ap19 -- ap22 [dir=forward label="Drop down"];
+	ap21 [label="Bonfire (Great Belfry)"];
+	ap21 -- ap25;
+	ap22 -- ap25;
+	ap22 -- ap23;
+	ap23 [label="Chest (Twinkling Titanite x3)"];
+	ap23 -- ap24 [label="Ladder"];
+	ap24 [label="Titanite Slab, Miniboss (Heavy armor dude,\n\
+drops Dragon Tooth & Havel's Greatshield)"];
+	ap24 -- ap18 [dir=forward label="Drop down, hurts"];
+	ap25 [label="Dragon Chaser's Ashes"];
+	ap25 -- ap26;
+	ap26 [label="Twinkling Dragon Torso Stone (use gesture Path of the Dragon by the altar)"];
+	ap20 -- ap27 [dir=forward label="Walk on the fog once the Great Bell has rung"];
+	ap27 [label="BOSS (Nameless King)"];
+
+	// [label=""];
+}
 
 }
