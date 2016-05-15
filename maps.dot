@@ -49,7 +49,8 @@ subgraph clusterHighwall {
 	10 -- 11 [label="Locked (Cell Key)"];
 	11 [label="Greirat (prisoner/thief)"];
 	8 -- i;
-	i [label="Roofs, Miniboss (Worm monster), Gem carrier" shape=box];
+	i [label="Roofs, Miniboss (Worm monster),\n\
+Crystal Bug (Raw Gem)" shape=box];
 	i -- j [label="Ladder"];
 	j -- 13 [label="Ladder"];
 	j -- 12;
@@ -57,14 +58,15 @@ subgraph clusterHighwall {
 	12 -- 14;
 	14 [label="Titanite shard"];
 	12 -- 15;
+	15 [label="Broadsword"];
 	15 -- k [label="Hidden path"];
 	k -- l [dir=forward label="Jump" shape=box];
-	l [label="Chest, Astora Straight Sword"];
+	l [label="Chest (Astora Straight Sword)"];
 	l -- m [dir=forward label="Jump"];
 	15 -- m [label="Stairs"];
 	m [label="Estus shard, Cell Key" shape=box];
 	m -- 13 [dir=forward label="Jump"];
-	13 [label="Miniboss (Big polearm dude), Ember"];
+	13 [label="Miniboss (Big polearm dude), Rapier"];
 	13 -- n;
 	n [label="Courtyard" shape=box];
 	n -- o;
