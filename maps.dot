@@ -1,5 +1,9 @@
 // Unexplored nodes:
-// none
+
+// Missing items:
+
+// Todo:
+// Add all NPC Invaders.
 
 graph maps {
 	bgcolor=black;
@@ -60,23 +64,29 @@ Crystal Bug (Raw Gem)" shape=box];
 	12 -- 15;
 	15 [label="Broadsword"];
 	15 -- k [label="Hidden path"];
-	k -- l [dir=forward label="Jump" shape=box];
+	k -- l [dir=forward label="Drop down" shape=box];
 	l [label="Chest (Astora Straight Sword)"];
-	l -- m [dir=forward label="Jump"];
+	l -- m [dir=forward label="Drop down"];
 	15 -- m [label="Stairs"];
 	m [label="Estus shard, Cell Key" shape=box];
-	m -- 13 [dir=forward label="Jump"];
+	m -- 13 [dir=forward label="Drop down"];
 	13 [label="Miniboss (Big polearm dude), Rapier"];
 	13 -- n;
-	n [label="Courtyard" shape=box];
+	n [label="Courtyard,\n\
+Red-eyed knight (drops Refined Gem)" shape=box];
 	n -- o;
-	o [label="Priestess, BOSS (Dancer of the Boreal Valley) (after beating all other bosses)" shape=box];
+	o [label="Priestess,\n\
+BOSS (Dancer of the Boreal Valley)\n\
+(after beating all other bosses)" shape=box];
 	n -- p;
 	p [label="BOSS (Vordt of the Boreal Valley)" shape=box];
 	p -- q;
 	q [label="Exit" shape=box];
 	n -- 3;
 	3 [label="Elevator"];
+	n -- r [label="Jump onto rooflet"];
+	r [label="Ring of Sacrifice"];
+	r -- 13 [dir=forward label="Drop down"];
 
 	// [label=""];
 }
@@ -92,7 +102,7 @@ subgraph clusterDarkCemetary {
 	cf60 [label="Ashen Estus Ring"];
 	cf61 [label="Titanite Chunk x2"];
 	cf61 -- cf62;
-	cf62 [label="Dark spirit (Daughter of Crystal Kriemhild)"];
+	cf62 [label="Invader (Daughter of Crystal Kriemhild)"];
 	cf61 -- cf63;
 	cf63 [label="2 Crystal Beasts (drop Titanite Scale x2 each)"];
 	cf62 -- cf64;
@@ -103,7 +113,8 @@ subgraph clusterDarkCemetary {
 	cf66 [label="Black Knights (drop Gauntlets and Leggings), Hornet Ring, Chaos Blade"];
 	cf66 -- cf67;
 	cf67 [label="Dark Firelink Shrine, Coiled Sword Fragment, Blacksmith Hammer,\n\
-Hollow's Ashes, Eyes of a Fire Keeper (behind illusory wall)"];
+Hollow's Ashes (if Yoel died and Yuria did not show up),\n\
+Eyes of a Fire Keeper (behind illusory wall)"];
 
 	// [label=""];
 }
@@ -129,14 +140,18 @@ subgraph clusterUndeadSettlement {
 	us6 -- us9 [label="Bridge"];
 	us9 -- us10;
 	us9 -- us11 [label="Sidepath"];
-	us11 [label="Fading Soul, ranged attackers on the roof"];
-	us10 [label="Door that opens from this side, no key needed"];
-	us10 -- us12;
+	us11 [label="Fading Soul, Plank Shield, ranged attackers on the roof"];
+	us11 -- us11b;
+	us11b [label="Flame Stoneplate Ring"];
+	us10 [label="Stables"];
+	us10 -- us12 [dir=forward label="Door opens from this side"];
 	us12 [label="Caduceus Round Shield"];
 	us12 -- us13
 	us13 [label="Grenadiers, Miniboss (Guy with cauldron & big wooden shield)"];
 	us13 -- us14;
+	us14 [label="South side"];
 	us14 -- us15 [dir=forward label="Drop down"];
+	us13 -- us15 [dir=forward label="Drop down"];
 	us15 [label="Titanite shard, Bonfire (Cliff Underside)"];
 	us15 -- us16;
 	us16 [label="Roofs, Cornyx the pyromancer, Hand Axe"];
@@ -150,17 +165,18 @@ subgraph clusterUndeadSettlement {
 Miniboss (Big ROUS, drops Bloodbite Ring)"];
 	us20 -- us33 [dir=forward label="Locked door (Grave Key, bought at Firelink Shrine.)"];
 	us20 -- us22 [dir=forward label="Ladder and a door that opens from this side"];
-	us22 [label="Bonfire (Dilapidated Bridge)"];
+	us22 [label="Bonfire (Dilapidated Bridge), Crystal Bug (Sharp Gem),\n\
+Invader (Holy Knight Hodrick, drops Vertebra Shackle)"];
 	us22 -- us23 [label="Ladder"];
 	us23 [label="Titanite shard"];
 	us22 -- us24;
-	us24 [label="Small town square, Titanite shard"];
+	us24 [label="Small town clearing, Titanite shard, Whip"];
 	us24 -- us25;
 	us25 [shape=box label="Corridor with corpse-cage enemies"];
 	us25 -- us26 [dir=forward label="Locked from this side"];
 	us26 [label="Warrior of Sunlight, Estus Soup"];
 	us25 -- us26 [dir=forward label="Drop down from upper floor"];
-	us25 -- us6 [dir=forward label="Opens from this side"];
+	us25 -- us6 [label="Door (opens from both sides)"];
 	us22 -- us27;
 	us8 -- us25 [dir=forward label="Drop down"];
 	us27 [label="Bombardement path, Young White Branch x3, Undead Bone Shard"];
@@ -170,7 +186,7 @@ Miniboss (Big ROUS, drops Bloodbite Ring)"];
 	us29 [label="Graveyard, Mortician's Ashes, Cleric clothes set"];
 	us28 -- us30;
 	us30 [label="Castle with flowers"];
-	us30 -- us17 [label="Big door, opens from this side"];
+	us30 -- us17 [dir=forward label="Big door, opens from this side"];
 	us30 -- us31;
 	us31 [label="BOSS (Rotted Greatwood), Bonfire (Pit of Hollows)"];
 	us18 -- us32 [dir=forward label="Get knocked down by thrown cauldron"];
@@ -182,7 +198,7 @@ Miniboss (Big ROUS, drops Bloodbite Ring)"];
 Loincloth, statue of Velka"];
 	us34 [label="ROUSs, Saint's Talisman"];
 	us34 -- us36 [label="Ladder"];
-	us36 -- us37 [label="Door opens from this side"];
+	us36 -- us37 [dir=forward label="Door opens from this side"];
 	us36 [label="Irina of Carim"];
 	us37 [label="Eygon of Carim, friend to Irina"];
 	us18 -- us37;
@@ -195,10 +211,10 @@ Loincloth, statue of Velka"];
 	us38 -- us41 [label="Elevator up, jump off halfway"];
 	us41 [label="Siegward again"];
 	us41 -- us42 [dir=forward label="Drop down"];
-	us42 [label="Miniboss (Fire Demon, Siegward helps fight, does not respawn),\n\
+	us42 [label="Miniboss (Fire Demon, Siegward helps fight, does not respawn, drops Fire Gem),\n\
 Large Club, Pale Tongue, Northern clothes set"];
 	us42 -- us43 [label="Stairs"];
-	us43 [label="Chest, Human Pine Resin x4"];
+	us43 [label="Chest (Human Pine Resin x4)"];
 	us43 -- us44;
 	us44 [label="Flynn's Ring"];
 	us44 -- us45 [dir=forward label="Drop down"];
@@ -218,6 +234,7 @@ subgraph clusterRoadOfSacrifices {
 	rs1 -- rs2 [dir=forward label="Drop down"];
 	rs2 [label="Brigand Axe, Miniboss (hunter, drops Butcher Knife),\n\
 Brigand clothes set, Brigand Twindaggers, Titanite shard"];
+	rs2 -- rs1 [dir=forward label="Drop down"];
 	rs2 -- rs2b [dir=forward label="Drop down"];
 	rs2b [label="Morne's Ring, Braille Divine Tome of Carim"];
 	rs2b -- rs2 [dir=forward label="Drop down"];
@@ -256,16 +273,15 @@ Grass Crest Shield, Twin Dragon Greatshield"];
 	rs15 -- rs21;
 	rs16 -- rs12 [dir=forward label="Drop down"];
 	rs16 [label="Golden Falcon Shield"];
-	rs17 -- rs16 [dir=forward label="Drop down"];
 	rs11 -- rs18;
 	rs18 [shape=box label="Stair room"];
-	rs18 -- rs17;
+	rs18 -- rs16 [dir=forward label="Drop down"];
 	rs18 -- rs19 [dir=forward label="Drop down"];
 	rs19 [label="Ring of Sacrifice"];
 	rs19 -- rs11 [dir=forward label="Drop down"];
 	rs13 [label="Miniboss Duo (Sword & Club, drops Exile Greatsword & Great Club)"];
 	rs21 [shape=box label="Stone ruin walls"];
-	rs21 -- rs18;
+	rs21 -- rs18 [label="Crystal Bug (Crystal Gem)"];
 	rs21 -- rs22;
 	rs21 -- rs25;
 	rs22 [label="Corridor, Blue Bug Pellet"];
@@ -279,22 +295,18 @@ Grass Crest Shield, Twin Dragon Greatshield"];
 	rs24 [label="Small forest canyon"];
 	rs24 -- rs26;
 	rs26 [label="BOSS (Crystal Sage)"];
-	rs25 -- rs22;
-	rs25 [label="Orbeck of Vinheim (won't teach me anything)"];
+	rs25 -- rs22 [dir=forward label="Drop down"];
+	rs25 [label="Orbeck of Vinheim\n\
+(will only join if your character has high intelligence)"];
 	rs26 -- rs27;
 	rs27 [label="Small forest canyon/cliff"];
 	rs27 -- rs28 [dir=forward label="Drop down"];
-	rs28 [label="Gem bug (Twinkling Titanite)"];
+	rs28 [label="Crystal Bug (Twinkling Titanite)"];
 	rs28 -- rs27;
 	rs27 -- rs29;
 	rs28 -- rs29 [dir=forward label="Drop down"];
 	rs29 [label="Campfire, pyromancer, Herald clothes set"];
-	rs7 -- rs30;
-	rs7 -- rs31;
-	rs30 -- rs31 [dir=forward label="Drop down"];
-	rs31 -- rs32;
-	rs30 [shape=box label="Upper balcony"];
-	rs31 [shape=box label="Corridor"];
+	rs7 -- rs32;
 	rs32 [shape=box label="Farron Coal"];
 	rs20 -- rs32 [dir=both label="Collapsed gate, view only"];
 	rs6 [shape=box label="Miniboss (Ice Beast, like the one from the first level)"];
@@ -303,7 +315,7 @@ Grass Crest Shield, Twin Dragon Greatshield"];
 Water is poisoned; don't stand in it for long.\n\
 Follow the campfires to find the signal fires.\n\
 Ragged Mask, Titanite Shard x5, Estus Shard, Prism Stone x10,\n\
-Miniboss (Swordsman, drops Cracked Red Eye Orb), Sage's Coal,\n\
+Miniboss (Swordsman, drops Cracked Red Eye Orb), Sage's Coal, Sage's Scroll,\n\
 Sunlight Talisman, Estus Soup, Wolf's Blood Swordgrass,\n\
 Nameless Knight clothes set, Miniboss (Godzilla-like creature armed with whole tree),\n\
 Iron Flesh, Greatsword (on a dead-end ramp)"];
@@ -317,14 +329,15 @@ Iron Flesh, Greatsword (on a dead-end ramp)"];
 	rs36 [label="Bonfire (Keep Ruins)"];
 	rs36 -- rs37;
 	rs37 [label="Swamp surrounding Keep Entrance"];
-	rs37 -- rs38 [label="Big door, opens only once all three signal fires are extinguished"];
+	rs37 -- rs38 [dir=forward label="Big door, opens only once all three signal fires are extinguished"];
 	rs38 [label="Keep proper, Shriving Stone"];
 	rs37 -- rs39;
 	rs39 [label="Swamp to the left (with loot) (and a Giant Enemy Crab)"];
 	rs37 -- rs40;
 	rs40 [label="Swamp to the right, Undead Bone Shard"];
 	rs40 -- rs41 [label="Ladder"];
-	rs41 [shape=box label="Bonfire (Old Wolf of Farron), Dreamchaser's Ashes"];
+	rs41 [shape=box label="Bonfire (Old Wolf of Farron),\n\
+Dreamchaser's Ashes, Crystal Bug (Twinkling Titanite)"];
 	rs41 -- rs42 [label="Elevator"];
 	rs39 -- rs43;
 	rs43 [label="Mushroom corner, Sage Scroll"];
@@ -334,7 +347,8 @@ Iron Flesh, Greatsword (on a dead-end ramp)"];
 	rs42 -- rs45;
 	rs45 [shape=box label="Road, Miniboss (Stray Demon), Greataxe"];
 	rs45 -- rs46 [dir=forward label="Drop down"];
-	rs46 [shape=box label="Broken road, Dragon Crest Shield, Lightning Spear, a dead dragon, 2 crystal bugs (drop Large Titanite Shards)"];
+	rs46 [shape=box label="Broken road, Dragon Crest Shield, Lightning Spear,\n\
+a dead dragon, 3 Crystal Bugs (drop Large Titanite Shards & Heavy Gem)"];
 	rs46 -- rs47 [label="Stair"];
 	rs47 [label="Top of road-gate"];
 	rs47 -- rs45 [dir=forward label="Drop down"];
@@ -342,16 +356,20 @@ Iron Flesh, Greatsword (on a dead-end ramp)"];
 	rs48 [label="Miniboss (Swamp monster, wields tree, summons kamikaze souls), Titanite Shard x2"];
 	rs48 -- rs49;
 	rs49 [label="Signal fire tower"];
+	rs49 -- rs54;
+	rs54 [label="Far swamp, Golden Scroll,\n\
+Invader (Yellowfinger Heysel, drops Xanthous Crown & Heysel Pick)"];
+	rs55 [label="Atonement, Hollow Gem"];
+	rs55 -- rs54 [dir=forward label="Drop down"];
 	rs38 -- rs50;
 	rs50 [label="Big fight (Swordsmen vs Werewolves, swordsmen drop Cracked Red Eye Orbs)"];
 	rs50 -- rs51 [label="Big door"];
 	rs51 [shape=box label="BOSS (Abyss Watchers)"];
 	rs50 -- rs52;
 	rs52 [shape=box label="Bonfire (Farron Keep Perimeter)"];
-	rs52 -- rs53;
-	rs53 [shape=box label="Enemy with Ghru Rotshield"];
-	rs53 -- rs6;
+	rs52 -- rs6;
 	rs6 [shape=box label="Balcony, Miniboss (Ice beast, drops Titanite Scale x2), Great Magic Weapon"];
+	rs6 -- rs55 [dir=forward label="Drop down"];
 
 	// [label=""];
 }
@@ -364,6 +382,8 @@ subgraph clusterCathedralOfTheDeep {
 	label = "Cathedral of the Deep";
 
 	cd1 [label="Bonfire (Cathedral of the Deep)"];
+	cd1 -- cd1b [label="Path to the left"];
+	cd1b [label="Paladin's Ashes"];
 	cd1 -- cd2;
 	cd2 [label="Stairs, Miniboss (Guy with axe and shield, and friend, drops Spider Shield, does not respawn)"];
 	cd2 -- cd3 [dir=forward label="Drop down"];
@@ -386,18 +406,19 @@ subgraph clusterCathedralOfTheDeep {
 	cd6 [shape=box label="Bonfire (Cleansing Chapel), Notched Whip"];
 	cd6 -- cd12 [dir=forward label="Locked from this side"];
 	cd6 -- cd13 [dir=forward label="Locked from this side"];
-	cd14 -- cd6 [dir=forward label="Drop down, Titanite Shard"];
+	cd18 -- cd6 [dir=forward label="Drop down, Titanite Shard"];
 	cd8 -- cd15;
 	cd15 [shape=box label="Curse Ward Greatshield, Kick Ladder"];
 	cd15 -- cd16 [dir=forward label="Ladder, must be kicked"];
 	cd16 [shape=box label="Small room"];
 	cd16 -- cd17;
 	cd16 -- cd18;
+	cd5 -- cd17 [dir=forward label="Drop down"];
 	cd17 [label="Canyon between graveyard and battlements, Saint-tree Bellvine"];
 	cd18 [label="Another graveyard, Miniboss (Ice Beast, drops Titanite Scale), Titanite Shard"];
 	cd17 -- cd19;
+	cd19 [label="Crystal Bug x2 (Twinkling Titanite)"];
 	cd19 -- cd18;
-	cd18 -- cd14;
 	cd11 -- cd20;
 	cd20 [label="Inner balconies, Evangelist"];
 	cd20 -- cd21 [label="Big door"];
@@ -425,15 +446,19 @@ subgraph clusterCathedralOfTheDeep {
 	cd30 [shape=box label="Miniboss (Huge spider, curses you, drops Aldrich's Sapphire)"];
 	cd29 -- cd31;
 	cd31 [shape=box label="Giant room with 2 giants and 2 levers.\n\
-One giant can be killed from [the balcony with Lloyd's Sword Ring], drops Large Titanite Shard & 4 Dung Pie.\n\
-He guards: Maiden clothes set, Soul of a Nameless Soldier, and a Big Door.\n\
-The other giant can be killed in the sludge. His attacks are easily avoided.\n\
-He guards: Drang Shoes, Drang Gauntlets, Drang Armor, Pale Tongue, Drang Hammers"];
+Giants drop Large Titanite Shard & 4 Dung Pie.\n\
+They are most easily killed in the sludge, where their attacks can be easily avoided,\n\
+as long as you stand between their feet.\n\
+One of them guards: Maiden clothes set, Soul of a Nameless Soldier, and a Big Door.\n\
+The other guards: Drang Shoes, Drang Gauntlets, Drang Armor, Pale Tongue, Drang Hammers.\n\
+Invader (Longfinger Kirk, drops Barbed Straight Sword & Spiked Shield)"];
 	cd31 -- cd32;
 	cd32 [label="Corridors, stairs"];
 	cd32 -- cd13 [dir=forward label="Door opens from this side"];
 	cd13 [label="Balcony"];
-	cd13 -- cd18 [dir=forward label="Drop down"];
+	cd13 -- cd18b [dir=forward label="Drop down"];
+	cd18b [shape=box label="Poisonbite Ring"];
+	cd18b -- cd18;
 	cd13 -- cd35 [dir=forward label="Big door"];
 	cd35 [shape=box label="Elevator"];
 	cd35 -- cd36;
@@ -452,7 +477,8 @@ He guards: Drang Shoes, Drang Gauntlets, Drang Armor, Pale Tongue, Drang Hammers
 	cd40  [shape=box label="Balcony with swordsman and priests"];
 	cd40 -- cd41 [label="Fog door"];
 	cd40 -- cd10 [label="Elevator"];
-	cd10 [shape=box label="Upper balcony over giant room, Unbreakable Patches (if the stars are right)"];
+	cd10 [shape=box label="Upper balcony over giant room,\n\
+Unbreakable Patches (if the stars are right)"];
 	cd10 -- cd31 [dir=forward label="Drop down (hurts)"];
 	cd41 [label="BOSS (Deacons of the Deep), Archdeacon clothes set"];
 	cd39 -- cd42 [dir=forward label="Drop down (hurts)"];
@@ -460,7 +486,8 @@ He guards: Drang Shoes, Drang Gauntlets, Drang Armor, Pale Tongue, Drang Hammers
 	cd42 -- cd43;
 	cd43 [shape=box label="Balcony with slug enemies (the neutral one drops Red Sign Soapstone)"];
 	cd43 -- cd44 [label="Big door"];
-	cd44 [shape=box label="Bonfire (Rosaria's Bed Chamber), Rosaria (Mother of Rebirth)"];
+	cd44 [shape=box label="Bonfire (Rosaria's Bed Chamber), Rosaria (Mother of Rebirth),\n\
+clothes set of Thorns"];
 	cd42 -- cd10 [dir=forward label="Bridge raised by lever"];
 	cd31 -- cd45 [label="Big door"];
 	cd45 [shape=box label="Balcony with a view, Saint Bident"];
@@ -474,6 +501,7 @@ subgraph clusterCatacombsOfCarthus {
 	cc1 [shape=box label="Upper floor, view of abyss, Carthus Rouge"];
 	cc1 -- cc2 [label="Bridge"];
 	cc1 -- cc3 [dir=forward label="Drop down from bridge (hurts)"];
+	cc1 -- cc55 [dir=forward label="Drop down"];
 	cc2 [shape=box label="Room with pillars"];
 	cc2 -- cc4;
 	cc2 -- cc5 [label="Stairs"];
@@ -481,7 +509,7 @@ subgraph clusterCatacombsOfCarthus {
 	cc4 -- cc7 [label="Ladder"];
 	cc7 [label="Corridor, Sharp Gem"];
 	cc7 -- cc5;
-	cc5 -- cc55 [label="Stairs through abyss (trapped, loot)"];
+	cc5 -- cc55 [label="Stairs through abyss"];
 	cc55 [label="Corridor, kill skeleton with hat to break ball, drops Undead Bone Shard"];
 	cc55 -- cc8;
 	cc5 -- cc9 [label="Corridor"];
@@ -504,9 +532,11 @@ subgraph clusterCatacombsOfCarthus {
 	cc16 [label="Lots of skeletons"];
 	cc16 -- cc17 [dir=forward label="Drop down, Stone bridge"];
 	cc16 -- cc17 [label="Rope bridge (fragile)"];
+	cc16 -- cc14 [dir=forward label="Lever lowers bars"];
 	cc17 [label="Corridor"];
 	cc17 -- cc18 [label="Big door"];
-	cc18 [shape=box label="BOSS (High Lord Wolnir) (touch goblet to access separate boss arena)"];
+	cc18 [shape=box label="BOSS (High Lord Wolnir) (touch goblet to access separate boss arena),\n\
+Grave Warden Pyromancy Tome"];
 	cc14 -- cc20;
 	cc20 [label="Ember"];
 	cc14 -- cc21 [label="Stairs"];
@@ -550,7 +580,7 @@ Speckled Stoneplate Ring (behind a brick wall; trick the ballista into destroyin
 	cc36 [label="Corridor, part 2"];
 	cc36 -- cc38 [dir=forward label="Drop down into hole"];
 	cc34 -- cc38 [dir=forward label="Drop down into hole"];
-	cc38 [label="Small magma lake"];
+	cc38 [label="Small magma lake, Toxic Mist, White Hair Talisman"];
 	cc36 -- cc39;
 	cc39 [shape=box label="Grass and roots corridor, Chest (Large Titanite Shard x3)"];
 	cc39 -- cc40;
@@ -559,7 +589,7 @@ Speckled Stoneplate Ring (behind a brick wall; trick the ballista into destroyin
 	cc39 -- cc40 [dir=forward label="Illusory wall behind chest, drop down, Izalith Staff"];
 	cc40 -- cc42 [label="Ambush by Knight Slayer Tsorig\n\
 (drops My Thanks!, Fume Ultra Greatsword, Black Iron Greatshield, Knight Slayer's Ring)"];
-	cc42 [shape=box label="Magma lake (unpassable), inaccessible loot"];
+	cc42 [shape=box label="Magma lake, Sacred Flame, Ember"];
 	cc41 [shape=box label="Bridge over magma lake, Soul of a Crestfallen Knight"];
 	cc41 -- cc43;
 	cc43 [label="Long ladders, Dragonrider Bow"];
@@ -567,6 +597,7 @@ Speckled Stoneplate Ring (behind a brick wall; trick the ballista into destroyin
 	cc44 [label="Platform above Smouldering Lake"];
 	cc44 -- cc45;
 	cc45 [label="Triple Ballista tower"];
+	cc45 -- cc24 [dir=forward label="Drop down, hurts"];
 	cc35 -- cc46 [label="Illusory wall (attack to dispel)"];
 	cc46 [label="Quelana Pyromancy Tome"];
 	cc46 -- cc38;
@@ -593,7 +624,8 @@ subgraph clusterBorealValley {
 	label = "Irithyll of the Boreal Valley";
 
 	bv1 [label="Bonfire (Irithyll of the Boreal Valley),\n\
-Miniboss (Big lizard, drops Pontiff's Right Eye)"];
+Miniboss (Big lizard, drops Pontiff's Right Eye),\n\
+Summon sign (Sirris vs Creighton the Wanderer)"];
 	bv1 -- bv2;
 	bv2 [label="Bonfire (Central Irityll)"];
 	bv2 -- bv3;
@@ -631,7 +663,8 @@ Miniboss (Big lizard, drops Pontiff's Right Eye)"];
 	bv15 [label="Magic Clutch Ring"];
 	bv12 [label="Roster of Knights"];
 	bv12 -- bv16;
-	bv16 [label="Tree garden & graveyard, stealthed but weak enemies, Undead Bone Shard"];
+	bv16 [label="Tree garden & graveyard, stealthed but weak enemies, Undead Bone Shard,\n\
+Invader (Creighton the Wanderer) (only if beaten earlier with Sirris)"];
 	bv16 -- bv19;
 	bv19 [label="Streets"];
 	bv19 -- bv20;
@@ -647,9 +680,11 @@ Miniboss (Big lizard, drops Pontiff's Right Eye)"];
 	bv22 -- bv23;
 	bv23 [label="Lower balcony, Blood Gem"];
 	bv23 -- bv24;
+	bv23 -- bv23b [label="Illusory wall"];
+	bv23b [label="Crystal Bug (Twinkling Titanite)"];
 	bv24 [label="Lake, Ring of Sacrifice, Great Heal"];
 	bv24 -- bv25;
-	bv25 [label="Flooded cellar"];
+	bv25 [label="Flooded cellar, Excrement-covered Ashes"];
 	bv24 -- bv26;
 	bv26 [label="Bonfire (Distant Manor)"];
 	bv25 -- bv27;
@@ -666,7 +701,9 @@ Knight (drops Large Titanite Shard & Divine Blessing), Archer on balcony"];
 	bv31 [label="Balcony, 2 Knights (each drop Large Titanite Shard x2),\n\
 Chests (Leo Ring, Smough's Great Hammer, Divine Blessing)"];
 	bv28 -- bv32;
-	bv32 [label="Streets, Large Titanite Shard"];
+	bv32 [label="Streets, Large Titanite Shard,\n\
+Invader (Dark Spirit of Londor, drops Manikin Claws)\n\
+(only if unfriendly with Yuria of Londor)"];
 	bv32 -- bv8;
 	bv8 [label="Elevator"];
 	bv32 -- bv34;
@@ -698,7 +735,7 @@ Two warriors (drop Drang Twinspears), fireballs from above, giants wake up."];
 	bv44 -- bv45;
 	bv44 -- bv46;
 	bv45 [label="Cathedral balconies, Crystal Bug (Simple Gem),\n\
-Mimic (Symbol of Avarice, Golden Ritual Spear)"];
+Mimic (Golden Ritual Spear)"];
 	bv45 -- bv37 [label="Elevator"];
 	bv43 -- bv47 [label="Illusory wall, ladder"];
 	bv47 [shape=box label="Miniboss (two great lizards, drop Ring of Favor),\n\
@@ -760,7 +797,7 @@ Painting Guardian clothes set"];
 	// [label=""];
 }
 
-bv30 -- id1;
+bv30 -- id1 [label="Invader (Alva, Seeker of the Spurned, drops Murakumo)"];
 
 subgraph clusterIrithyllDungeon {
 	label = "Irithyll Dungeon";
@@ -821,7 +858,7 @@ Mimic (spawns curse-frogs, drops Dark Clutch Ring)"];
 	id21 -- id22 [label="Tunnel"];
 	id22 [shape=box label="Room"];
 	id22 -- id23 [label="Door"];
-	id23 [shape=box label="Great chamber with jailors, Mimic (Titanite Scale x2)"];
+	id23 [shape=box label="Great chamber with jailors, Mimic (Titanite Scale x2), Alva clothes set"];
 	id23 -- id24;
 	id23 -- id26;
 	id23 -- id55 [label="Locked door (Jailer's Key Ring)"];
@@ -854,7 +891,9 @@ Mimic (spawns curse-frogs, drops Dark Clutch Ring)"];
 	id34 [label="Stretch out, Undead Bone Shard, Bonfire (Profaned Capital)"];
 	id35 [label="Bridge, Onislayer Greatarrow x8"];
 	id35 -- id36;
-	id35 -- id37 [dir=forward label="Drop down"];
+	id35 -- id35b [dir=forward label="Drop down"];
+	id35b [label="Onislayer Greatbow"];
+	id35b -- id37 [dir=forward label="Drop down"];
 	id36 [label="Handmaids (use fire), Gargoyle (drops Gargoyle Flame Hammer),\n\
 Chest (Ember), Mimics (Greatshield of Glory, Rusted Gold Coin x2)"];
 	id36 -- id37;
@@ -930,7 +969,8 @@ subgraph clusterLothricCastle {
 	lc18 -- lc9 [dir=forward label="Drop down"];
 	lc11 [label="Upper battlements, Greatlance"];
 	lc11 -- lc23 [dir=forward label="Drop down"];
-	lc19 [label="Canal, Titanite Chunk x2, Twinkling Titanite x2"];
+	lc19 [label="Canal, Titanite Chunk x2,\n\
+Twinkling Titanite x2, Abyssal worm-monster x2"];
 	lc11 -- lc12 [label="Bridge"];
 	lc12 [shape=box label="Dragons, who can be slain by 99 arrows,\n\
 given a strong enough bow. If your bow is weak, reinforce it,\n\
@@ -962,12 +1002,7 @@ Crystal Bug (Twinkling Titanite x2), Titanite Scale"];
 Chests (Spirit Tree Crest Shield, Twinkling Titanite, Titanite Scale, Twinkling Titanite x2)"];
 	lc14 -- lc22;
 	lc22 -- lc23;
-	lc22 [label="Enemies, spawns abomination in canal.\n\
-Conjecture: The abomination can eat your dropped souls,\n\
-and in doing so gains an extra life.\n\
-Your dropped souls and one copy of his loot is dropped on his first defeat,\n\
-then he respawns immediately.\n\
-When defeated a second time, he is gone for good."];
+	lc22 [label="Enemies"];
 	lc23 [label="Canal edge, Titanite Chunk"];
 	lc23 -- lc19 [dir=forward label="Drop down"];
 	lc11 -- lc24 [dir=forward label="Drop down"];
@@ -980,7 +1015,7 @@ When defeated a second time, he is gone for good."];
 	lc26 -- lcx2 [dir=forward label="Drop down, hurts"];
 	lcx2 [label="Mimic (Sunlight Straight Sword), Braille Divine Tome of Lothric"];
 	lcx2 -- lc12 [dir=forward label="Drop down, hurts"];
-	lc27 [label="BOSS (Dragonslayer Armor)"];
+	lc27 [label="BOSS (Dragonslayer Armour)"];
 	lc26 -- lc28;
 	lc28 [label="Chest (Titanite Scale)"];
 	lc28 -- lc71 [dir=forward label="Elevator (Contraption does not move)"];
@@ -1012,7 +1047,9 @@ Crystal Bug (Crystal Gem & Twinkling Titanite),\n\
 	lc36 -- lc35 [dir=forward label="Drop down"];
 	lc36 -- lc37;
 	lc37 [label="Dark misty room, Crystal Bugs (Twinkling Titanite x2, Chaos Gem),\n\
-Lever of unknown function, Titanite Scale"];
+Titanite Scale"];
+	lc37 -- lc37b [label="Lever"];
+	lc37b [label="Chest (Witch's Locks), Power Within"];
 	lc37 -- lc38;
 	lc38 [label="Balconies, Crystal Bug (Twinkling Titanite x2),\n\
 Titanite Chunk x2, 'Dunk head in wax'"];
@@ -1073,6 +1110,7 @@ Titanite Chunk x2, Dark Gem, Ring of Sacrifice"];
 	lc49 -- lc59;
 	lc59 [label="Roofs, Crystal Bugs (Twinking Titanite & Heavy Gem,\n\
 Twinking Titanite & Sharp Gem)"];
+	lc59 -- lc63 [dir=forward label="Drop down"];
 	lc59 -- lc49 [dir=forward label="Drop down"];
 	lc59 -- lc60 [dir=forward label="Drop down"];
 	lc60 [label="Roofs, Titanite Chunk"];
@@ -1083,7 +1121,7 @@ Twinking Titanite & Sharp Gem)"];
 	lc62 [label="Courtyard, Hunter trio (drops Golden Wing Crest Shield,\n\
 Onikiri and Ubadachi, Sage's Crystal Staff)"];
 	lc61 -- lc63;
-	lc63 [label="Titanite Chunk x2"];
+	lc63 [label="Outer balcony, Titanite Chunk x2"];
 	lc62 -- lc64;
 	lc64 [label="Antechamber"];
 	lc64 -- lc65;
@@ -1111,7 +1149,7 @@ lc55 -- hw56;
 
 	hw56 [label="BOSS (Oceiros, the Consumed King)"];
 	hw56 -- hw57;
-	hw57 [label="Path of the Dragon, Titanite Scale,\n\
+	hw57 [label="Path of the Dragon, Chest (Titanite Scale),\n\
 Drakeblood clothes set (after clearing Archdragon Peak)"];
 
 hw57 -- cf58 [dir=forward label="Illusory wall, drop down"];
@@ -1124,7 +1162,7 @@ subgraph clusterArchdragonPeak {
 	ap1 [label="Start, Lightning Gem"];
 	ap1 -- ap2;
 	ap2 [label="Bonfire (Archdragon Peak), Titanite Chunk"];
-	ap1 -- apx1 [dir=forward label="Contraption does not move"];
+	ap1 -- ap11 [dir=forward label="Elevator (Contraption does not move)"];
 	ap2 -- ap4;
 	ap6 -- ap5;
 	ap4 [label="Battlements, Ancient Dragon Greatshield"];
@@ -1158,7 +1196,8 @@ Titanite Chunk x2, Twinkling Titanite x4"];
 	ap16 [label="Wooden balcony"];
 	ap16 -- ap17;
 	ap17 [label="Crystal Bug (Twinkling Titanite x3), Chest (Titanite Scale x3)"];
-	ap18 [label="Cliffside, dragon, Soul of a Weary Warrior"];
+	ap18 [label="Cliffside, Soul of a Weary Warrior,\n\
+Dragon (kill with ranged attacks from the nearby window)"];
 	ap18 -- ap17 [dir=forward label="Drop down"];
 	ap17 -- ap18;
 	ap18 -- ap19;
@@ -1179,12 +1218,18 @@ Lever (rings the bell, opens path to a BOSS, disables all other paths)"];
 	ap23 -- ap24 [label="Ladder"];
 	ap24 [label="Titanite Slab, Miniboss (Heavy armor dude,\n\
 drops Dragon Tooth & Havel's Greatshield)"];
-	ap24 -- ap18 [dir=forward label="Drop down, hurts"];
+	ap24 -- ap28 [dir=forward label="Drop down, hurts"];
+	ap28 [label="Great Magic Barrier"];
+	ap28 -- ap18 [dir=forward label="Drop down"];
 	ap25 [label="Dragon Chaser's Ashes"];
 	ap25 -- ap26;
 	ap26 [label="Twinkling Dragon Torso Stone (use gesture Path of the Dragon by the altar)"];
 	ap20 -- ap27 [dir=forward label="Walk on the fog once the Great Bell has rung"];
 	ap27 [label="BOSS (Nameless King)"];
+	ap29 [label="Bonfire (Nameless King),\n\
+Titanite Slab, Dragonslayer clothes set"];
+	ap25 -- ap29 [dir=forward label="Portcullis opens once boss is defeated"];
+	ap29 -- ap11 [dir=forward label="Portcullis opens once boss is defeated"];
 
 	// [label=""];
 }

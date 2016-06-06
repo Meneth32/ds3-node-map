@@ -9,3 +9,7 @@ Heysel Pick
 Xanthous Crown
 
 It was after killing the Crystal Sage. I traveled from the Firelink Shrine to Farron Keep, then climbed up the ladder.
+
+10:39 2016-05-21
+Rebirth resets your stats to what they were at the beginning of the game, not to all 1's.
+For complete stat control, you must have the class Deprived... or not, since Deprived has all 10's, not all 1's.
