@@ -1,6 +1,7 @@
 // Unexplored nodes:
 
 // Missing items:
+// NG+ rings.
 
 // Todo:
 // Add all NPC Invaders.
@@ -38,7 +39,7 @@ subgraph clusterHighwall {
 	f [label="Miniboss (Swordsman)" shape=box];
 	f -- 6 [dir=forward label="Locked from this side"];
 	d -- 6;
-	6 [label="Mimic"];
+	6 [label="Mimic (Deep Battle Axe)"];
 	f -- 7;
 	7 -- g;
 	g [label="Bonfire (Tower on the Wall)"];
@@ -75,9 +76,9 @@ Crystal Bug (Raw Gem)" shape=box];
 	n [label="Courtyard,\n\
 Red-eyed knight (drops Refined Gem)" shape=box];
 	n -- o;
-	o [label="Priestess,\n\
+	o [label="Priestess Emma,\n\
 BOSS (Dancer of the Boreal Valley)\n\
-(after beating all other bosses)" shape=box];
+(after beating all other bosses, or killing the priestess)" shape=box];
 	n -- p;
 	p [label="BOSS (Vordt of the Boreal Valley)" shape=box];
 	p -- q;
@@ -920,7 +921,7 @@ Purging Stone, Shriving Stone"];
 	id45 [label="Irithyll dungeon, Giant's room (lower corridor), Jailer's Key Ring"];
 	id45 -- id48 [dir=forward label="Drop down"];
 	id44 [label="Sleeping monster, Court Sorcerer clothes set,\n\
-Mimic (Symbol of Avarice & Court Sorcerer's Staff), Rubbish"];
+Mimic (Court Sorcerer's Staff), Rubbish"];
 	id46 [label="Wooden platform"];
 	id46 -- id40 [dir=forward label="Drop down"];
 	id48 [label="Floor of giant's room, Profaned Flame, Titanite Chunk"];
@@ -1043,35 +1044,43 @@ Chests (Spirit Tree Crest Shield, Twinkling Titanite, Titanite Scale, Twinkling 
 	lc35 -- lc36 [dir=forward label="Drop down"];
 	lc36 [label="Archive maze, Titanite Chunk x2,\n\
 Crystal Bug (Crystal Gem & Twinkling Titanite),\n\
-'Dunk head in wax' (protects against cursing hands), Titanite Scale, Crystal Chime"];
+'Dunk head in wax' (protects against cursing hands), Titanite Scale, Crystal Chime,\n\
+Chest (Titanite Slab) (use lever on balcony to access)"];
 	lc36 -- lc35 [dir=forward label="Drop down"];
 	lc36 -- lc37;
 	lc37 [label="Dark misty room, Crystal Bugs (Twinkling Titanite x2, Chaos Gem),\n\
 Titanite Scale"];
-	lc37 -- lc37b [label="Lever"];
+	lc37 -- lc37b [dir=forward label="Lever"];
 	lc37b [label="Chest (Witch's Locks), Power Within"];
 	lc37 -- lc38;
 	lc38 [label="Balconies, Crystal Bug (Twinkling Titanite x2),\n\
-Titanite Chunk x2, 'Dunk head in wax'"];
+Titanite Chunk x2, Lever (opens a section of the lower maze), 'Dunk head in wax'"];
+	lc38 -- lc35 [dir=forward label="Kick ladder"];
 	lc39 [label="Top of bookshelf, Titanite Scale"];
 	lc39 -- lc38 [dir=forward label="Drop down"];
+	lc38 -- lc35b [dir=forward label="Drop down, hurts"];
+	lc35b [label="Avelyn"];
+	lc35b -- lc35 [dir=forward label="Drop down"];
 	lc40 -- lc39 [dir=forward label="Drop down"];
 	lc52 -- lc38 [dir=forward label="Drop down"];
 	lc52 [label="Roof, Titanite Scale x3"];
 	lc40 [label="Upper balconies, Freeze Sage, Titanite Scale x2"];
 	lc38 -- lc40;
+	lc38 -- lc40 [label="Ladder"];
 	lc40 -- lc41 [label="Illusory wall"];
 	lc41 [label="Miniboss (Ice sword guy, drops Outrider Knight clothes set)"];
 	lc40 -- lc42 [dir=forward label="Drop down"];
 	lc42 [label="Bridge, Shriving Stone,\n\
 Freeze Sage (drops Crystal Scroll, does not respawn)"];
 	lc40 -- lc42 [label="Ladder"];
+	lc42 -- lc38 [dir=forward label="Lever, Scholar Ring"];
 	lc42 -- lc43;
 	lc43 [label="Outside balcony, Knight"];
 	lc42 -- lc44;
 	lc42 -- lc54 [dir=forward label="Drop down"];
 	lc54 [label="Crystal Bug (Titanite Scale x2)"];
-	lc44 -- lc45 [label="Elevator"];
+	lc44 -- lc45;
+	lc45 [label="Elevator"];
 	lc45 -- lc35 [dir=forward label="Lever opens wall"];
 	lc44 -- lc46;
 	lc46 [label="Balcony, Chest (Titanite Scale x3)"];
@@ -1092,9 +1101,10 @@ Freeze Sage (drops Crystal Scroll, does not respawn)"];
 	lc53 [label="Soul Stream"];
 	lc54 -- lc36 [dir=forward label="Drop down"];
 	lc4 [label="The Consumed King's Garden, Shadow clothes set, Claw,\n\
-Titanite Chunk x2, Dark Gem, Ring of Sacrifice"];
+Titanite Chunk x2, Dark Gem, Ring of Sacrifice,\n\
+Wood Grain Ring +1 (NG+1)"];
 	lc4 -- lc55;
-	lc55 [label="Courtyard"];
+	lc55 [label="Courtyard, Knights (one drops Magic Stoneplate Ring)"];
 	lcx15 -- lc55 [dir=forward label="Drop down"];
 	lc4 -- lcy3;
 	lcy3 [label="Elevator"];
@@ -1197,7 +1207,8 @@ Titanite Chunk x2, Twinkling Titanite x4"];
 	ap16 -- ap17;
 	ap17 [label="Crystal Bug (Twinkling Titanite x3), Chest (Titanite Scale x3)"];
 	ap18 [label="Cliffside, Soul of a Weary Warrior,\n\
-Dragon (kill with ranged attacks from the nearby window)"];
+Dragon (kill with ranged attacks from the nearby window)\n\
+(drops Titanite Chunk x6, Titanite Scale x3, Twinkling Titanite x3)"];
 	ap18 -- ap17 [dir=forward label="Drop down"];
 	ap17 -- ap18;
 	ap18 -- ap19;
