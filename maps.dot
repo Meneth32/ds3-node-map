@@ -16,6 +16,102 @@ graph maps {
 root [label="Firelink Shrine"];
 root -- 1;
 
+root -- fs1 [label="After returning the four Lords of Cinder"];
+
+subgraph clusterFlamelessShrine {
+	label = "Flameless Shrine";
+	fs1 [label="Bonfire (Flameless Shrine)"];
+	fs1 -- fs2;
+	fs2 [label="Bonfire (Kiln of the First Flame)"];
+	fs2 -- fs3;
+	fs3 [label="BOSS (Soul of Cinder)"];
+}
+
+fs2 -- dh1 [label="Bonfire"];
+
+subgraph clusterDregHeap {
+	label = "The Dreg Heap";
+	dh1 [label="Bonfire (The Dreg Heap)"];
+	dh1 -- dh2;
+	dh2 [label="Pilgrim"];
+	dh2 -- dh3 [dir=forward label="Drop down"];
+	dh3 -- dh4 [dir=forward label="Drop trap (Soul of a Weary Warrior)"];
+	dh3 -- dh5;
+	dh5 [label="Titanite Chunk,\n\
+Miniboss (drops another Titanite Chunk)"];
+	dh5 -- dh6;
+	dh6 [label="Aquamarine Dagger"];
+	dh4 [label="Titanite Scale,\n\
+Murky Hand Scythe,\n\
+Twinkling Titanite"];
+	dh4 -- dh7 [dir=forward label="Drop down"];
+	dh7 [label="Lightning Urn x4"];
+	dh7 -- dh8;
+	dh7 -- dhx1 [label="guarded by angel"];
+	dh8 [label="Soul of a Crestfallen Knight" shape=box];
+	dh8 -- dh9;
+	dh9 [label="Rusted Coin x2"];
+	dh9 -- dh10;
+	dh10 [label="Murky Longstaff, respawning enemies"];
+	dh9 -- dh11;
+	dh11 [label="Angel summoner,\n\
+drops Twinkling Titanite x2"];
+	dh11 -- dh15 [dir=forward label="Drop down"];
+	dh8 -- dh13 [label="Bridge created by fallen tower"];
+	dh13 [label="Lapp"];
+	dh13 -- dh14 [dir=forward label="Drop down"];
+	dh14 -- dh15 [dir=forward label="Drop down"];
+	dh15 [label="Miniboss,\n\
+Titanite Chunk,\n\
+Homeward Bone x3"];
+dh15 -- dh16 [dir=forward label="Drop down"];
+	dh16 [label="Bonfire (Earthen Peak Ruins),\n\
+Friendly NPC"];
+	dh16 -- dh18 [dir=forward label="Drop down"];
+	dh16 -- dh17 [label="Unknown method"];
+	dh17 [label="Unknown loot"];
+	dh18 [label="Desert Pyromancer Garb"];
+	dh18 -- dh19;
+	dh16 -- dh19;
+	dh19 [label="Titanite Scale, Ember"];
+	dh19 -- dh20 [dir=forward label="Drop down"];
+	dh20 [label="Large Area.\n\
+Purple Moss Clump x4,\n\
+Titanite Chunk x2,\n\
+Large Soul of a Weary Warrior x2,\n\
+Desert Pyromancer Gloves,\n\
+Desert Pyromancer Skirt,\n\
+Loincloth"];
+	dh20 -- dh21 [label="Roots"];
+	dh20 -- dh24 [label="Roots"];
+	dh21 -- dh22 [label="Roots"];
+	dh22 [label="Angel summoner,\n\
+drops Twinkling Titanite x2"];
+	dh21 -- dh23;
+	dh23 [label="Prism Stone x6,\n\
+Desert Pyromancer Zoey, drops Flame Fan,\n\
+Desert Pyromancer Hood"];
+	dh24 [label="Ring of Favor +3"];
+	dh24 -- dh25 [dir=forward label="Drop down"];
+	dh25 [label="Titanite Chunk"];
+	dh25 -- dh20 [dir=forward label="Drop down"];
+	dh24 -- dh20 [dir=forward label="Drop down"];
+	dh23 -- dh27 [dir=forward label="Roots, Drop down"];
+	dh27 [label="Divine Blessing"];
+	dh27 -- dh28;
+	dh28 [label="Ember, Angel summoner,\n\
+drops Twinkling Titanite x2"];
+	dh27 -- dh19 [dir=forward label="Drop down"];
+	dh27 -- dh31 [dir=forward label="Drop down"];
+	dh19 -- dh30;
+	dh30 [label="Ledge, Giant Door Shield"];
+	dh31 [label="Bonfire (Within the Earthen Peak Ruins)"];
+	dh31 -- dh32 [dir=forward label="Drop down"];
+	dh32 [label="BOSS (Demon Prince)"];
+
+	// [label=""];
+}
+
 subgraph clusterHighwall {
 	label = "High Wall of Lothric";
 	1 [label="Start, Bonfire (High Wall of Lothric)"];
