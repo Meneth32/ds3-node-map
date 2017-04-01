@@ -69,11 +69,11 @@ Crystal Bug (Raw Gem)" shape=box];
 	l [label="Chest (Astora Straight Sword)"];
 	l -- m [dir=forward label="Drop down"];
 	15 -- m [label="Stairs"];
-	m [label="Estus shard, Cell Key" shape=box];
+	m [label="Silver Eagle Kite Shield, Estus shard, Cell Key, Titanite Shard" shape=box];
 	m -- 13 [dir=forward label="Drop down"];
 	13 [label="Miniboss (Big polearm dude), Rapier"];
 	13 -- n;
-	n [label="Courtyard,\n\
+	n [label="Courtyard, Lucerne,\n\
 Red-eyed knight (drops Refined Gem)" shape=box];
 	n -- o;
 	o [label="Priestess Emma,\n\
@@ -161,13 +161,14 @@ subgraph clusterUndeadSettlement {
 	us14 -- us17;
 	us17 [label="Road"];
 	us17 -- us18 [label="Bridge"];
+	us18 [label="Cauldron dudes"];
 	us17 -- us20 [label="Ladder"];
 	us20 [label="Sewer with ROUSs, Caestus,\n\
 Miniboss (Big ROUS, drops Bloodbite Ring)"];
 	us20 -- us33 [dir=forward label="Locked door (Grave Key, bought at Firelink Shrine.)"];
 	us20 -- us22 [dir=forward label="Ladder and a door that opens from this side"];
 	us22 [label="Bonfire (Dilapidated Bridge), Crystal Bug (Sharp Gem),\n\
-Invader (Holy Knight Hodrick, drops Vertebra Shackle)"];
+Invader (Holy Knight Hodrick, only before beating Rotted Greatwood, drops Vertebra Shackle)"];
 	us22 -- us23 [label="Ladder"];
 	us23 [label="Titanite shard"];
 	us22 -- us24;
@@ -190,8 +191,7 @@ Invader (Holy Knight Hodrick, drops Vertebra Shackle)"];
 	us30 -- us17 [dir=forward label="Big door, opens from this side"];
 	us30 -- us31;
 	us31 [label="BOSS (Rotted Greatwood), Bonfire (Pit of Hollows)"];
-	us18 -- us32 [dir=forward label="Get knocked down by thrown cauldron"];
-	us32 [label="Titanite shard"];
+	us32 [label="Canyon, Titanite shard"];
 	us32 -- us33 [label="Stairs"];
 	us32 -- us34 [label="Tunnel, shoot down hanging body with loot\n\
 (Blessed Red and White Shield)"];
@@ -1241,6 +1241,173 @@ drops Dragon Tooth & Havel's Greatshield)"];
 Titanite Slab, Dragonslayer clothes set"];
 	ap25 -- ap29 [dir=forward label="Portcullis opens once boss is defeated"];
 	ap29 -- ap11 [dir=forward label="Portcullis opens once boss is defeated"];
+
+	// [label=""];
+}
+
+cd6 -- pw1 [dir=forward label="Talk to man by altar, accept quest"];
+
+subgraph clusterPaintedWorld {
+	label = "Painted World of Ariandel";
+
+	pw1 [label="Start, npc"];
+	pw1 -- pw2;
+	pw2 [label="Bonfire (Snowfield), Poison Gem"];
+	pw2 -- pw3 [dir=forward label="Trap"];
+	pw3 [label="Wolves, Miniboss (Big wolf, Large Titanite Shard x2)"];
+	pw3 -- pw4;
+	pw3 -- pw5;
+	pw5 [label="Follower Javelin"];
+	pw5 -- pw2 [dir=forward label="Drop down"];
+	pw4 [label="Frozen Weapon"];
+	pw4 -- pw6;
+	pw6 [label="Bonfire (Rope Bridge Cave)"];
+	pw6 -- pw7 [label="Rope Bridge"];
+	pw7 [label="Castle outside, friendly knight, Hollow Gem"];
+	pw8 -- pw6 [dir=forward label="Drop down"];
+	pw8 [label="Large Soul of an Intrepid Hero"];
+	pw11 -- pw8 [dir=forward label="Drop down"];
+	pw3 -- pw9;
+	pw9 -- pw10;
+	pw10 [label="Tower"];
+	pw9 -- pw11 [dir=forward label="Trap"];
+	pw7 -- pw12 [label="Big door"];
+	pw12 [label="Bonfire (Ariandel Chapel), Friede (gives Chillbite Ring)" shape=box];
+	pw6 -- pw13 [label="Ladder"];
+	pw13 [label="Ledge, Shriving Stone, Crystal bug (Large Titanite Shard)"];
+	pw49 -- pw13 [dir=forward label="Drop down"];
+	pw49 -- pw48 [label="Ladder"];
+	pw49 [label="Titanite Slab"];
+	pw48 [label="Ledge"];
+	pw7 -- pw14 [label="Cut bridge to make ladder"];
+	pw14 [label="Ledge"];
+	pw14 -- pw15 [dir=forward label="Drop down via roots"];
+	pw15 [label="Crystal bug (Twinkling Titanite)"];
+	pw13 -- pw16 [dir=forward label="Ice slide"];
+	pw16 -- pw17 [dir=forward label="Drop down"];
+	pw16 -- pw18;
+	pw18 [label="Weak bird-folk"];
+	pw17 -- pw18 [dir=forward label="Drop down"];
+	pw19 [label="Crow Quills"];
+	pw19 -- pw18 [dir=forward label="Drop down"];
+	pw17 [label="Budding Green Blossom x3"];
+	pw27 [label="Board balcony"];
+	pw27 -- pw19 [dir=forward label="Jump"];
+	pw18 -- pw20;
+	pw20 [label="Rotten ditch, enemy (drops Sharp Gem)"];
+	pw20 -- pw21 [label="Ladder"];
+	pw21 [label="Ember, NPC" shape=box];
+	pw21 -- pw22;
+	pw22 [label="Bonfire (Corvian Settlement)" shape=box];
+	pw21 -- pw23 [label="Bridge"];
+	pw23 [label="enemy (drops Sharp Gem)"];
+	pw33 -- pw23 [dir=forward label="Does not open from this side"];
+	pw35 -- pw23 [dir=forward label="Does not open from this side"];
+	pw23 -- pw24;
+	pw24 [label="Ember" shape=box];
+	pw23 -- pw25 [dir=forward label="Drop down"];
+	pw25 [label="Simple Gem"];
+	pw25 -- pw20 [dir=forward label="Portcullis"];
+	pw23 -- pw26 [label="Bridge"];
+	pw26 [label="Thin ledge"];
+	pw26 -- pw27 [dir=forward label="Jump"];
+	pw23 -- pw28;
+	pw28 [label="Thin ledge"];
+	pw28 -- pw29;
+	pw29 [label="Room" shape=box];
+	pw28 -- pw30 [label="Ladder"];
+	pw30 [label="Roofs"];
+	pw30 -- pw31 [label="Ladder"];
+	pw31 [label="Crystal bug (Twinkling Titanite)"];
+	pw30 -- pw32 [dir=forward label="Drop down"];
+	pw32 [label="Bridge"];
+	pw32 -- pw33 [label="Ladder"];
+	pw33 [label="Room" shape=box];
+	pw32 -- pw34 [label="Indoor ledge"];
+	pw34 [label="Roof, Crow Talons"];
+	pw30 -- pw35 [dir=forward label="Drop down"];
+	pw35 [label="Slave Knight clothes set" shape=box];
+	pw23 -- pw36 [dir=forward label="Drop down"];
+	pw36 [label="Dark Gem"];
+	pw36 -- pw23 [dir=forward label="Drop down"];
+	pw43 -- pw23 [dir=forward label="Does not open from this side"];
+	pw27 -- pw22 [dir=forward label="Drop down"];
+	pw27 -- pw37;
+	pw37 [label="Ledge, Crystal bug (Large Titanite Shard x2)"];
+	pw31 -- pw38;
+	pw38 [label="Roofs, Soul of a Venerable Old Hand"];
+	pw38 -- pw39r [dir=forward label="Drop down"];
+	pw39r [label="Rafters, item"];
+	pw39r -- pw39 [dir=forward label="Drop down"];
+	pw31 -- pw40 [label="Thin bridge, enemy drops on you"];
+	pw40 [label="Tower"];
+	pw40 -- pw41 [dir=forward label="Drop down"];
+	pw41 [label="Roofs"];
+	pw41 -- pw23 [dir=forward label="Drop down"];
+	pw41 -- pw42 [dir=forward label="Jump"];
+	pw42 [label="Roof, Rusted Gold Coin x3"];
+	pw42 -- pw23 [dir=forward label="Drop down"];
+	pw38 -- pw43 [dir=forward label="Drop down"];
+	pw38 -- pw43 [label="Ladder"];
+	pw39 -- pw43 [label="Door"];
+	pw39 [label="Way of White Corona"];
+	pw43 [label="Young White Branch"];
+	pw43 -- pw44;
+	pw44 [label="Sir Vilhelm (drops Contraption Key & Onyx Blade)"];
+
+	pw15 -- pw45 [dir=forward label="Roots"];
+	pw45 [label="Follower Sabre"];
+	pw45 -- pw46 [dir=forward label="Roots"];
+	pw46 [label="Bonfire (Depths of the Painting), Ice crabs (drops Crystal Gem)"];
+	pw46 -- pw47 [label="Path to the left"];
+	pw46 -- pw48 [dir=forward label="Drop down"];
+	pw48 [label="Flowers, BOSS (Champion's Gravetender,\n\
+drops Champion's Bones & Valorheart)"];
+	pw47 [label="Snap Freeze"];
+	pw46 -- pw48 [label="Ladder"];
+
+	pw44 -- pw50 [label="Lever"];
+	pw50 [label="NPC" shape=box];
+	pw50 -- pw52 [dir=forward label="Does not open from this side"];
+	pw50 -- pw55 [dir=forward label="Contraption does not move"];
+	pw50 -- pw51;
+	pw51 [label="Balcony"];
+	pw51 -- pw52 [dir=forward label="Drop down"];
+	pw52 [label="Bonfire (Snowy Mountain Pass)"];
+	pw52 -- pw53;
+	pw52 -- pw54 [dir=forward label="Drop down"];
+	pw53 [label="Snowy Mountain Pass, Ember, Follower Torch,\n\
+Titanite Chunk, Quakestone Hammer"];
+	pw54 [label="Ledge & roof"];
+	pw54 -- pw52 [dir=forward label="Drop down"];
+	pw53 -- pw55 [dir=forward label="Fell tree"];
+	pw53 -- pw56;
+	pw55 [label="Bridge, Titanite Chunk"];
+	pw55 -- pw52 [dir=forward label="Drop down"];
+	pw53 -- pw57 [dir=forward label="Trap"];
+	pw57 -- pw53 [dir=forward label="Drop down"];
+	pw57 [label="AoE attacks"];
+	pw56 [label="Ledge"];
+	pw56 -- pw58;
+	pw58 [label="Cave"];
+	pw56 -- pw53 [dir=forward label="Fell tree"];
+	pw58 -- pw59;
+	pw59 [label="Crypt" shape=box];
+	pw59 -- pw60 [label="Illusory wall"];
+	pw60 [label="Lower level, Blood Gem, Vilhelm's Armor set,\n\
+Turn Handle (triggers cutscene, opens a new path)" shape=box];
+	pw59 -- pw12;
+	pw60 -- pw61 [label="Illusory wall"];
+	pw61 [label="Crystal bug (Twinkling Titanite)" shape=box];
+	pw61 -- pw62;
+	pw62 [label="Thin ledge"];
+	pw62 -- pw63 [dir=forward label="Drop down via roots"];
+	pw63 [label="Pyromancer's Parting Flame"];
+	pw63 -- pw64;
+	pw64 [label="Coliseum above flowers,\n\
+Invader (Livid Pyromancer Dunell, drops Floating Chaos)"];
+	pw12 -- pw65 [label="Opens when handle in the Lower level is turned"];
+	pw65 [label="BOSS (Sister Friede)"];
 
 	// [label=""];
 }

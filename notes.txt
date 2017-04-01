@@ -13,3 +13,38 @@ It was after killing the Crystal Sage. I traveled from the Firelink Shrine to Fa
 10:39 2016-05-21
 Rebirth resets your stats to what they were at the beginning of the game, not to all 1's.
 For complete stat control, you must have the class Deprived... or not, since Deprived has all 10's, not all 1's.
+
+20:42 2016-10-26
+When Sister Friede turns invisible, she sometimes jumps straight over you.
+You can spot the snow dust where she lands.
+She won't move far from the landing.
+Attack her quickly before she can launch her combo.
+21:27 2016-10-26
+Second stage is easier. Avoid the fire and use ranged attacks on Friede, who can be staggered by them.
+If you die just as the boss does, you'll get the Titanite Slab reward, but you'll have to fight the boss again.
+22:07 2016-10-26
+Or not... seems there are three stages to the boss.
+Maybe you just get the Slab first time the summon dies.
+
+15:17 2016-11-02
+Faith max miracles:
+Blessed Weapon,
+Lightning Blade,
+Dark Blade,
+Deep Protection,
+Sacred Oath.
+
+Useful items:
+Lingering Dragoncrest Ring
+Canvas Talisman?
+Caitha's Chime?
+Saint's Talisman?
+
+15:18 2016-11-04
+Best 1H weapon build?
+Probably Refined Dark Sword with Lightning Blade.
+You need Faith enough to cast it, but no more, as it doesn't scale with Faith.
+Damage-buff stats are Strength and Dex.
+
+15:23 2016-11-04
+Use the 100% drop cheat to get Sunlight Medals.
